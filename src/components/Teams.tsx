@@ -1,23 +1,7 @@
-import React from 'react';
-import { Users, Brain, Shield, Database, Globe } from 'lucide-react';
-import { theme } from '../theme';
+import { Users } from 'lucide-react';
+import { teams } from '../data/teamsData';
 
 const Teams = () => {
-  const teams = [
-    { name: 'Neural Networks', domain: 'AI/ML', icon: Brain, color: 'text-purple-400' },
-    { name: 'Cyber Guardians', domain: 'Cyber Security', icon: Shield, color: 'text-cyan-400' },
-    { name: 'Data Miners', domain: 'Data Science', icon: Database, color: 'text-pink-400' },
-    { name: 'Code Crusaders', domain: 'Web Dev', icon: Globe, color: 'text-emerald-400' },
-    { name: 'Algorithm Architects', domain: 'AI/ML', icon: Brain, color: 'text-purple-400' },
-    { name: 'Security Sentinels', domain: 'Cyber Security', icon: Shield, color: 'text-cyan-400' },
-    { name: 'Insight Innovators', domain: 'Data Science', icon: Database, color: 'text-pink-400' },
-    { name: 'Frontend Fighters', domain: 'Web Dev', icon: Globe, color: 'text-emerald-400' },
-    { name: 'ML Mavericks', domain: 'AI/ML', icon: Brain, color: 'text-purple-400' },
-    { name: 'Crypto Defenders', domain: 'Cyber Security', icon: Shield, color: 'text-cyan-400' },
-    { name: 'Pattern Pioneers', domain: 'Data Science', icon: Database, color: 'text-pink-400' },
-    { name: 'Stack Strategists', domain: 'Web Dev', icon: Globe, color: 'text-emerald-400' }
-  ];
-
   return (
     <section id="teams" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
@@ -34,16 +18,19 @@ const Teams = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {teams.map((team, index) => {
             const IconComponent = team.icon;
+            const iconColor = team.domain === 'AI' ? 'text-purple-400' : 'text-cyan-400';
+            const bgColor = team.domain === 'AI' ? 'bg-purple-400' : 'bg-cyan-400';
+            
             return (
               <div key={index} className="cyber-card p-6 hover-lift">
                 <div className="flex items-center justify-between mb-4">
-                  <IconComponent className={`w-8 h-8 ${team.color} icon-glow`} />
+                  <IconComponent className={`w-8 h-8 ${iconColor} icon-glow`} />
                   <Users className="w-6 h-6 text-slate-400" />
                 </div>
                 
                 <h3 className="text-xl font-bold text-white mb-2 heading-font">{team.name}</h3>
                 <div className="flex items-center space-x-2">
-                  <div className={`w-3 h-3 rounded-full ${team.color.replace('text-', 'bg-')}`}></div>
+                  <div className={`w-3 h-3 rounded-full ${bgColor}`}></div>
                   <span className="text-slate-400 text-sm font-medium">{team.domain}</span>
                 </div>
               </div>
