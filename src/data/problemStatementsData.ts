@@ -1,4 +1,3 @@
-import { Brain, Shield } from 'lucide-react';
 
 export const problems = [
   {
@@ -35,6 +34,6 @@ export const problems = [
 
 // Configuration to control display mode
 export const problemStatementsConfig = {
-  showActualData: true, // Change to true to show actual problem statements
+  showActualData: false, // Change to true to show actual problem statements
   comingSoonMessage: "Problem statements will be updated soon. Stay tuned for exciting challenges!"
 };
