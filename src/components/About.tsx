@@ -1,8 +1,6 @@
-import { useState } from 'react';
-import { Brain, Shield, Award, Users, Zap, ChevronDown, ChevronUp } from 'lucide-react';
+import { Brain, Shield, Award, Users, Zap } from 'lucide-react';
 
 const About = () => {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const stats = [
     { icon: Users, value: '50+', label: 'Participants' },
@@ -10,32 +8,6 @@ const About = () => {
     { icon: Zap, value: '48h', label: 'Hackathon' }
   ];
 
-  const faqs = [
-    {
-      question: 'Who can participate in INNOVATE-X?',
-      answer: 'Students from all technical backgrounds are welcome. Whether you\'re a beginner or expert, our bootcamp will prepare you for the challenges ahead. No prior hackathon experience required!'
-    },
-    {
-      question: 'What should I bring to the hackathon?',
-      answer: 'Bring your laptop, charger, and creativity! We provide meals, snacks, beverages, workspace, high-speed internet, and all necessary development tools. Just focus on building amazing solutions.'
-    },
-    {
-      question: 'How are teams formed?',
-      answer: 'You can register with your existing team (2-4 members) or join our team formation session on day one. We\'ll help match participants based on skills and interests to create balanced teams.'
-    },
-    {
-      question: 'What are the prizes and benefits?',
-      answer: 'Winners receive cash prizes up to $10,000, latest tech gadgets, mentorship opportunities, and internship offers from our partner companies. All participants get certificates and networking opportunities.'
-    },
-    {
-      question: 'Is there any registration fee?',
-      answer: 'INNOVATE-X is completely free! This includes bootcamp training, hackathon participation, meals, workspace, and all materials. We believe innovation should be accessible to everyone.'
-    },
-    {
-      question: 'What happens after the hackathon?',
-      answer: 'Top projects get featured in our showcase, participants join our alumni network, and we provide continued mentorship. Many past participants have launched startups or secured internships through connections made here.'
-    }
-  ];
   return (
     <section id="about" className="py-12 sm:py-16 md:py-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -113,46 +85,6 @@ const About = () => {
                   </div>
                 );
               })}
-            </div>
-          </div>
-        </div>
-
-        {/* FAQ Section */}
-        <div className="py-8 sm:py-12 md:py-16 px-4 border-t border-slate-800/50">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8 md:mb-12">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold gradient-text heading-font mb-3 md:mb-4">
-                Frequently Asked Questions
-              </h3>
-              <p className="text-slate-400 text-sm sm:text-base">Everything you need to know about INNOVATE-X</p>
-            </div>
-            
-            <div className="space-y-3 md:space-y-4">
-              {faqs.map((faq, index) => (
-                <div key={index} className="cyber-card overflow-hidden">
-                  <button
-                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    className="w-full p-4 sm:p-5 md:p-6 text-left flex items-center justify-between hover:bg-purple-500/5 transition-all duration-300 group"
-                  >
-                    <span className="text-sm sm:text-base md:text-lg font-semibold text-white pr-3 md:pr-4 group-hover:text-purple-300 transition-colors duration-300">
-                      {faq.question}
-                    </span>
-                    <div className={`transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`}>
-                      {openFaq === index ? 
-                        <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 flex-shrink-0" /> : 
-                        <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 flex-shrink-0" />
-                      }
-                    </div>
-                  </button>
-                  <div className={`overflow-hidden transition-all duration-300 ${
-                    openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                  }`}>
-                    <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6">
-                      <p className="text-slate-300 leading-relaxed text-sm sm:text-base">{faq.answer}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>

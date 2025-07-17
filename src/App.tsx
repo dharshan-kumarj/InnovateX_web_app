@@ -5,6 +5,7 @@ import Roadmap from './components/Roadmap';
 import ProblemStatements from './components/ProblemStatements';
 import Teams from './components/Teams';
 import Members from './components/Members';
+import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <ProblemStatements />
         <Teams />
         <Members />
+        <FAQ />
         <Footer />
       </div>
     </div>

@@ -136,10 +136,10 @@ const Footer = () => {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col sm:flex-row items-center justify-between space-y-3 sm:space-y-0">
               <div className="text-slate-400 text-center sm:text-left text-xs sm:text-sm">
-                <p>© 2025 INNOVATE-X. Organized by School of Computer Science and Technology,</p>
-                <p className="mt-1">Division of Data Science and Cyber Security.</p>
+                <p>© 2025 INNOVATE-X. Organized by Division of Data Science and Cyber Security.</p>
+                {/* <p className="mt-1"></p> */}
               </div>
-              <div className="flex flex-wrap items-center justify-center sm:justify-end space-x-2 sm:space-x-4 text-xs sm:text-sm text-slate-500">
+              {/* <div className="flex flex-wrap items-center justify-center sm:justify-end space-x-2 sm:space-x-4 text-xs sm:text-sm text-slate-500">
                 <a href="#" className="hover:text-white transition-colors duration-300">Privacy Policy</a>
                 <span>•</span>
                 <a href="#" className="hover:text-white transition-colors duration-300">Terms of Service</a>
@@ -147,7 +147,7 @@ const Footer = () => {
                 <a href="#" className="hover:text-white transition-colors duration-300 flex items-center">
                   Code of Conduct <ExternalLink className="w-3 h-3 ml-1" />
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

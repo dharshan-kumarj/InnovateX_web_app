@@ -211,6 +211,53 @@ body {
   transform: translateY(-1px) scale(1.02);
 }
 
+/* Cyber button outline variant */
+.cyber-button-outline {
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  color: #d946ef;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background-clip: padding-box;
+}
+
+.cyber-button-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #d946ef 0%, #0ea5e9 100%);
+  border-radius: 12px;
+  padding: 2px;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.cyber-button-outline:hover {
+  color: white;
+  background: linear-gradient(135deg, #d946ef 0%, #0ea5e9 100%);
+  box-shadow: 
+    0 0 30px rgba(217, 70, 239, 0.6),
+    0 0 60px rgba(14, 165, 233, 0.4),
+    0 8px 32px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.cyber-button-outline:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
 /* Enhanced divider */
 .cyber-divider {
   width: 120px;
