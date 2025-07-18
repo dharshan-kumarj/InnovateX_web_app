@@ -24,8 +24,8 @@ const Teams = () => {
     setError(null);
     try {
       // Update this URL to match your backend server
-      const response = await axios.get<ApiResponse>('http://localhost:8000/teams');
-      
+      const response = await axios.get<ApiResponse>('https://innovatex-backend-r6ie.onrender.com/teams');
+
       if (response.data.success) {
         setTeams(response.data.teams);
         setLastUpdated(new Date());
