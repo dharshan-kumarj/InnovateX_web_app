@@ -6,6 +6,7 @@ import ProblemStatements from './components/ProblemStatements';
 import Members from './components/Members';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import Teams from './components/Teams';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <About />
         <Roadmap />
         <ProblemStatements />
-        {/* <Teams /> */}
+        <Teams />
         <Members />
         <FAQ />
         <Footer />
