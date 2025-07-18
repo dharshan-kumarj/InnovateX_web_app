@@ -119,7 +119,7 @@ const Teams = () => {
         </div>
 
         {/* Refresh Button */}
-        <div className="flex justify-center mb-6">
+        {/* <div className="flex justify-center mb-6">
           <button
             onClick={handleRefresh}
             disabled={loading}
@@ -128,7 +128,7 @@ const Teams = () => {
             <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
             <span>{loading ? 'Refreshing...' : 'Refresh Data'}</span>
           </button>
-        </div>
+        </div> */}
 
         {/* Content Container */}
         <div className="cyber-card p-4 sm:p-6 md:p-8">
