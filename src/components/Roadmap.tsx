@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Brain, Shield, Code, Trophy, Calendar, User, Plane, MapPin, Clock, Sparkles, Zap, ChevronDown, ChevronUp } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Brain, Shield, Code, Trophy, Calendar, User, Plane, Clock, Sparkles, Zap, ChevronDown } from 'lucide-react';
 
 const Roadmap = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -89,28 +89,14 @@ const Roadmap = () => {
   ];
 
   return (
-    <section id="roadmap" className="py-12 sm:py-16 px-4 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-emerald-500/5 rounded-full blur-xl animate-pulse delay-2000 transform -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-16 h-16 bg-yellow-500/5 rounded-full blur-lg animate-pulse delay-3000"></div>
-        
-        {/* Twinkling stars effect */}
-        <div className="stars">
-          <div className="star" style={{top: '10%', left: '20%'}}></div>
-          <div className="star" style={{top: '25%', left: '15%'}}></div>
-          <div className="star" style={{top: '15%', left: '30%'}}></div>
-          <div className="star" style={{top: '35%', left: '80%'}}></div>
-          <div className="star" style={{top: '45%', left: '70%'}}></div>
-          <div className="star" style={{top: '60%', left: '85%'}}></div>
-          <div className="star" style={{top: '75%', left: '25%'}}></div>
-          <div className="star" style={{top: '85%', left: '45%'}}></div>
-        </div>
+    <section id="roadmap" className="relative py-12 sm:py-16 px-4 overflow-hidden">
+      {/* Background Elements - Same as Hero */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="cyber-grid"></div>
+        <div className="floating-particles"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 heading-font">
             <span className="gradient-text">TECH FLIGHT PATH</span>

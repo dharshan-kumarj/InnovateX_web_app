@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Brain, Shield, Clock, Zap, ArrowRight, Target, Code, Lightbulb, Sparkles, Star, Hexagon } from 'lucide-react';
 import { problems, problemStatementsConfig } from '../data/problemStatementsData';
 
@@ -284,8 +284,14 @@ const ProblemStatements = () => {
   );
 
   return (
-    <section id="problems" className="py-20 px-4 bg-slate-950/50">
-      <div className="max-w-7xl mx-auto">
+    <section id="problems" className="relative py-20 px-4">
+      {/* Background Elements - Same as Hero */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="cyber-grid"></div>
+        <div className="floating-particles"></div>
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 heading-font">
             <span className="gradient-text">PROBLEM</span> STATEMENTS

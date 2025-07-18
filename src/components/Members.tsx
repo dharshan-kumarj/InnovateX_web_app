@@ -48,8 +48,14 @@ const Members = () => {
   ];
 
   return (
-    <section id="members" className="py-12 md:py-20 px-4">
-      <div className="max-w-7xl mx-auto">
+    <section id="members" className="relative py-12 md:py-20 px-4">
+      {/* Background Elements - Same as Hero */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="cyber-grid"></div>
+        <div className="floating-particles"></div>
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 heading-font">
             <span className="gradient-text">CORE</span> MEMBERS

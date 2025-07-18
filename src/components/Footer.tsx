@@ -19,10 +19,10 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-b from-slate-900 to-black border-t border-purple-500/20">
-      {/* Background Effects */}
+    <footer className="relative border-t border-purple-500/20">
+      {/* Background Effects - Same as Hero */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="cyber-grid opacity-30"></div>
+        <div className="cyber-grid"></div>
         <div className="floating-particles"></div>
       </div>
 
