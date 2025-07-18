@@ -5,7 +5,7 @@ import studentImage from '../assets/images/event_coordintors/student/kevin.jpeg'
 import dharshanImage from '../assets/images/club_coordinators/dharshan.jpg';
 import bruno from '../assets/images/secretaries/bruno.jpeg';
 import deepak from '../assets/images/secretaries/deepak.png';
-import rahul from '../assets/images/club_coordinators/rahul.jpg';
+import rahul from '../assets/images/club_coordinators/Rahul.jpg';
 
 const Members = () => {
   // Main Coordinators (First Row - 4 Cards)
