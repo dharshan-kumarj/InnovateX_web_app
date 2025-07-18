@@ -84,8 +84,8 @@ const Footer = () => {
                   <div className="flex items-start space-x-2 sm:space-x-3 group">
                     <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-cyan-400 mt-1 icon-glow flex-shrink-0" />
                     <div>
-                      <p className="text-white font-semibold text-xs sm:text-sm md:text-base">Kevin</p>
-                      <p className="text-slate-400 text-xs sm:text-sm">Student Event Coordinator</p>
+                      <p className="text-white font-semibold text-xs sm:text-sm md:text-base">Kevin J</p>
+                      <p className="text-slate-400 text-xs sm:text-sm">Secretary</p>
                       <a href="tel:+15551234567" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-xs sm:text-sm md:text-base">
                         9345639487
                       </a>
@@ -94,8 +94,8 @@ const Footer = () => {
                   <div className="flex items-start space-x-2 sm:space-x-3 group">
                     <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-cyan-400 mt-1 icon-glow flex-shrink-0" />
                     <div>
-                      <p className="text-white font-semibold text-xs sm:text-sm md:text-base">Deepak Kumar</p>
-                      <p className="text-slate-400 text-xs sm:text-sm">Student Event Coordinator</p>
+                      <p className="text-white font-semibold text-xs sm:text-sm md:text-base">Deepakumar</p>
+                      <p className="text-slate-400 text-xs sm:text-sm">Joint Secretary</p>
                       <a href="tel:+15551234567" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-xs sm:text-sm md:text-base">
                         9345429463
                       </a>
@@ -104,8 +104,8 @@ const Footer = () => {
                   
                   <div className="flex items-start space-x-2 sm:space-x-3">
                     <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-purple-400 icon-glow flex-shrink-0 mt-1" />
-                    <a href="mailto:test@karunya.edu" className="text-purple-400 hover:text-purple-300 transition-colors duration-300 text-xs sm:text-sm md:text-base break-all">
-                      test@karunya.edu
+                    <a href="mailto:atom@karunya.edu.in" className="text-purple-400 hover:text-purple-300 transition-colors duration-300 text-xs sm:text-sm md:text-base break-all">
+                      atom@karunya.edu.in
                     </a>
                   </div>
                   
@@ -113,7 +113,7 @@ const Footer = () => {
                     <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-emerald-400 mt-1 icon-glow flex-shrink-0" />
                     <div>
                       <p className="text-white font-medium text-xs sm:text-sm md:text-base">DSCS Department</p>
-                      <p className="text-slate-400 text-xs sm:text-sm">University Campus, Building A</p>
+                      <p className="text-slate-400 text-xs sm:text-sm">University Campus</p>
                       {/* <p className="text-slate-400 text-xs sm:text-sm">Tech Innovation Center</p> */}
                     </div>
                   </div>

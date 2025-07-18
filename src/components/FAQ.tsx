@@ -28,7 +28,13 @@ const FAQ = () => {
     {
       question: "How are teams formed?",
       answer: "You can either register with your existing team or join as an individual. We'll have team formation sessions at the beginning of the event to help solo participants find teammates with complementary skills."
-    }
+    },
+
+    {
+      question: "Will I get Skill Based Learning marks for participating in the Hackathon?",
+      answer: "Yes! Participating students will earn Skill Based Learning marks under II Year – Data Science Ecosystem (23DC2020) & III Year – Either Full Stack Development (23DC2032) or Deep Learning (23DC2040)"
+    },
+
   ];
 
   const toggleFaq = (index: number) => {
@@ -62,17 +68,16 @@ const FAQ = () => {
           </div>
           <div className={`transition-all duration-300 flex-shrink-0 ${openFaq === index ? 'rotate-180' : ''}`}>
             <div className="w-7 h-7 xs:w-8 xs:h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-slate-800/50 rounded-full flex items-center justify-center border border-slate-700 group-hover:border-purple-500/50 transition-colors duration-300">
-              {openFaq === index ? 
-                <ChevronUp className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-purple-400" /> : 
+              {openFaq === index ?
+                <ChevronUp className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-purple-400" /> :
                 <ChevronDown className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-purple-400" />
               }
             </div>
           </div>
         </button>
-        
-        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
-          openFaq === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-        }`}>
+
+        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openFaq === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+          }`}>
           <div className="px-3 xs:px-4 sm:px-5 md:px-6 lg:px-7 xl:px-8 pb-3 xs:pb-4 sm:pb-5 md:pb-6 lg:pb-7 xl:pb-8">
             <div className="w-full h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent mb-3 xs:mb-4 sm:mb-5 md:mb-6"></div>
             <div className="flex items-start">
@@ -125,7 +130,7 @@ const FAQ = () => {
                   <div className="w-full">
                     <FAQItem faq={pair[0]} index={pairIndex * 2} />
                   </div>
-                  
+
                   {/* Right FAQ */}
                   {pair[1] && (
                     <div className="w-full">
@@ -137,7 +142,7 @@ const FAQ = () => {
             </div>
           </div>
 
-  
+
         </div>
       </div>
     </section>
