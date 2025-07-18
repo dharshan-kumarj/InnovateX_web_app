@@ -3,10 +3,11 @@ import { Users, Shield, Code } from 'lucide-react';
 // Import images
 import studentImage from '../assets/images/event_coordintors/student/kevin.jpeg';
 import dharshanImage from '../assets/images/club_coordinators/dharshan.jpg';
-import bruno from '../assets/images/secretaries/bruno.jpeg';
+import bruno from '../assets/images/event_coordintors/student/bruno.png';
 import deepak from '../assets/images/secretaries/deepak.png';
 import rahul from '../assets/images/club_coordinators/Rahul.jpg';
-import aravindan from '../assets/images/club_coordinators/Aravindan.jpg';
+import aravindan from '../assets/images/club_coordinators/aravind.png';
+import nadhish from '../assets/images/event_coordintors/student/nadish.png';
 
 const Members = () => {
   // Main Coordinators (First Row - 4 Cards)
@@ -32,7 +33,7 @@ const Members = () => {
     {
       name: 'Nadhish',
       role: 'Event Coordinator',
-      avatar: 'N',
+      image: nadhish,
       icon: Shield
     }
   ];
