@@ -28,7 +28,7 @@ const Hero = () => {
     <section id="hero" className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Enhanced Navbar - Fully Responsive */}
       <nav className="absolute top-0 left-0 right-0 z-50 bg-slate-900/20 backdrop-blur-md border-b border-slate-800/30">
-        <div className="w-full px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12">
+        <div className="w-full pb-3 sm:px-4 md:px-6 lg:px-8 xl:px-12">
           <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
             {/* Left Logo - Karunya University */}
             <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-4">

@@ -358,10 +358,12 @@ const Roadmap = () => {
             <p className="text-slate-300 text-sm sm:text-base mb-4 sm:mb-5">
               Join thousands of developers in this transformative 4-week experience
             </p>
-            <button className="cyber-button bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 px-4 sm:px-6 py-1.5 sm:py-2 rounded-xl font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/30 relative overflow-hidden group">
-              <span className="relative z-10 text-sm sm:text-base">BOARD NOW</span>
-              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-            </button>
+            <a href='https://tinyurl.com/InnovateXdscs' target='_blank' rel='noopener noreferrer'>
+              <button className="cyber-button bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 px-4 sm:px-6 py-1.5 sm:py-2 rounded-xl font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/30 relative overflow-hidden group">
+                <span className="relative z-10 text-sm sm:text-base">BOARD NOW</span>
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              </button>
+            </a>
           </div>
         </div>
       </div>
