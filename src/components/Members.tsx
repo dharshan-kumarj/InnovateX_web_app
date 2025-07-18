@@ -39,9 +39,9 @@ const Members = () => {
 
   // Club Coordinators (Second Row - 3 Cards)
   const clubCoordinators = [
-    { name: 'Rahul', role: 'Hackhive Coordinator', image : rahul , icon: Code },
-    { name: 'Dharshan Kumar J', role: 'Web Development Club Coordinator', image: dharshanImage, icon: Code },
-    { name: 'Aravindan', role: 'Unbiased Club Coordinator', image : aravindan , icon: Code }
+    { name: 'Rahul', role: 'Co-ordinator - HackHive', image : rahul , icon: Code },
+    { name: 'Dharshan Kumar J', role: 'Co-ordinator - Web Development Club', image: dharshanImage, icon: Code },
+    { name: 'Aravindan', role: 'Co-ordinator - Unbiased Club', image : aravindan , icon: Code }
   ];
 
   return (

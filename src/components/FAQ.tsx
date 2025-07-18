@@ -41,12 +41,6 @@ const FAQ = () => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  // Group FAQs into pairs for left-right layout
-  const faqPairs = [];
-  for (let i = 0; i < faqs.length; i += 2) {
-    faqPairs.push([faqs[i], faqs[i + 1]].filter(Boolean));
-  }
-
   const FAQItem = ({ faq, index }: { faq: typeof faqs[0], index: number }) => (
     <div className="cyber-card overflow-hidden hover-lift group h-fit transition-all duration-300">
       <div className="relative">
@@ -61,12 +55,12 @@ const FAQ = () => {
                   {(index + 1).toString().padStart(2, '0')}
                 </span>
               </div>
-              <h3 className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-white group-hover:text-cyan-300 transition-colors duration-300 leading-tight">
+              <h3 className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl font-semibold text-white group-hover:text-cyan-300 transition-colors duration-300 leading-tight">
                 {faq.question}
               </h3>
             </div>
           </div>
-          <div className={`transition-all duration-300 flex-shrink-0 ${openFaq === index ? 'rotate-180' : ''}`}>
+          <div className={`transition-all duration-500 flex-shrink-0 ${openFaq === index ? 'rotate-180' : ''}`}>
             <div className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 xl:w-11 xl:h-11 bg-slate-800/50 rounded-full flex items-center justify-center border border-slate-700 group-hover:border-purple-500/50 transition-colors duration-300">
               {openFaq === index ?
                 <ChevronUp className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-purple-400" /> :
@@ -76,15 +70,14 @@ const FAQ = () => {
           </div>
         </button>
 
-        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openFaq === index ? 'max-h-[600px] xs:max-h-[500px] sm:max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
-          }`}>
+        <div className={`overflow-hidden transition-[max-height,opacity] duration-700 ease-in-out ${openFaq === index ? 'max-h-[600px] xs:max-h-[500px] sm:max-h-[400px] opacity-100' : 'max-h-0 opacity-0'}`}>
           <div className="px-2 xs:px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 2xl:px-8 pb-2 xs:pb-3 sm:pb-4 md:pb-5 lg:pb-6 xl:pb-7 2xl:pb-8">
             <div className="w-full h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6"></div>
             <div className="flex items-start">
               <div className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center mr-1 xs:mr-2 sm:mr-3 md:mr-4 mt-0.5 xs:mt-1 flex-shrink-0">
                 <Zap className="w-1.5 h-1.5 xs:w-2 xs:h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 lg:w-4 lg:h-4 text-white" />
               </div>
-              <p className="text-slate-300 leading-relaxed text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl flex-1">
+              <p className="text-slate-300 leading-relaxed text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-base xl:text-lg flex-1">
                 {faq.answer}
               </p>
             </div>
@@ -121,23 +114,11 @@ const FAQ = () => {
             </p>
           </div>
 
-          {/* FAQ Grid with Enhanced Responsiveness */}
-          <div className="max-w-6xl mx-auto">
+          {/* FAQ Grid - Always Single Column, Stacked */}
+          <div className="max-w-3xl mx-auto">
             <div className="space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8 xl:space-y-10 2xl:space-y-12">
-              {faqPairs.map((pair, pairIndex) => (
-                <div key={pairIndex} className="grid grid-cols-1 md:grid-cols-2 gap-2 xs:gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 2xl:gap-10">
-                  {/* Left FAQ */}
-                  <div className="w-full">
-                    <FAQItem faq={pair[0]} index={pairIndex * 2} />
-                  </div>
-
-                  {/* Right FAQ */}
-                  {pair[1] && (
-                    <div className="w-full">
-                      <FAQItem faq={pair[1]} index={pairIndex * 2 + 1} />
-                    </div>
-                  )}
-                </div>
+              {faqs.map((faq, index) => (
+                <FAQItem faq={faq} index={index} key={index} />
               ))}
             </div>
           </div>
