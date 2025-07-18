@@ -91,6 +91,16 @@ const Footer = () => {
                       </a>
                     </div>
                   </div>
+                  <div className="flex items-start space-x-2 sm:space-x-3 group">
+                    <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-cyan-400 mt-1 icon-glow flex-shrink-0" />
+                    <div>
+                      <p className="text-white font-semibold text-xs sm:text-sm md:text-base">Deepak Kumar</p>
+                      <p className="text-slate-400 text-xs sm:text-sm">Student Event Coordinator</p>
+                      <a href="tel:+15551234567" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-xs sm:text-sm md:text-base">
+                        9345429463
+                      </a>
+                    </div>
+                  </div>
                   
                   <div className="flex items-start space-x-2 sm:space-x-3">
                     <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-purple-400 icon-glow flex-shrink-0 mt-1" />
