@@ -9,8 +9,16 @@ import rahul from '../assets/images/club_coordinators/Rahul.jpg';
 import aravindan from '../assets/images/club_coordinators/Aravindan.jpg';
 
 const Members = () => {
+  type Coordinator = {
+    name: string;
+    role: string;
+    image?: string;
+    icon: typeof Users | typeof Shield | typeof Code;
+    avatar?: string;
+  };
+
   // Main Coordinators (First Row - 4 Cards)
-  const mainCoordinators = [
+  const mainCoordinators: Coordinator[] = [
     {
       name: 'Kevin',
       role: 'Secretary',
@@ -38,9 +46,9 @@ const Members = () => {
   ];
 
   // Club Coordinators (Second Row - 3 Cards)
-  const clubCoordinators = [
+  const clubCoordinators: Coordinator[] = [
     { name: 'Rahul', role: 'Hackhive Coordinator', image : rahul , icon: Code },
-    { name: 'Dharshan Kumar J', role: 'Web Development Club Coordinator', image: dharshanImage, icon: Code },
+    { name: 'Dharshan Kumar J', role: 'DotDev Club Coordinator', image: dharshanImage, icon: Code },
     { name: 'Aravindan', role: 'Unbiased Club Coordinator', image : aravindan , icon: Code }
   ];
 

@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import { Brain, Shield, Code, Trophy, Calendar, User, Plane, Clock, Sparkles, Zap, ChevronDown } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Brain, Shield, Code, Trophy, Calendar, User, Plane, MapPin, Clock, Sparkles, Zap, ChevronDown, ChevronUp } from 'lucide-react';
 
 const Roadmap = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [activeCard, setActiveCard] = useState(null);
+  const [activeCard, setActiveCard] = useState<number | null>(null);
   
   useEffect(() => {
     const handleResize = () => {
@@ -15,7 +15,7 @@ const Roadmap = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const handleToggleCard = (index) => {
+  const handleToggleCard = (index: number | null) => {
     if (isMobile) {
       setActiveCard(activeCard === index ? null : index);
     }
@@ -25,14 +25,14 @@ const Roadmap = () => {
     {
       week: 1,
       title: 'AI/ML Bootcamp',
-      dates: 'Aug 1-7, 2025',
+      dates: 'July 21-25, 2025',
       icon: Brain,
       color: 'text-purple-400',
       bgColor: 'bg-purple-400',
       bgGradient: 'from-purple-500/10 to-pink-500/10',
       speaker: {
-        name: 'Dr. Sarah Chen',
-        title: 'AI Research Scientist at Google',
+        name: 'Dr. Vigneshwaran',
+        title: 'AI Research Scientist',
         expertise: 'Neural Networks & Deep Learning'
       },
       description: 'Dive deep into the world of artificial intelligence and machine learning with cutting-edge techniques and real-world applications.',
@@ -89,14 +89,28 @@ const Roadmap = () => {
   ];
 
   return (
-    <section id="roadmap" className="relative py-12 sm:py-16 px-4 overflow-hidden">
-      {/* Background Elements - Same as Hero */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="cyber-grid"></div>
-        <div className="floating-particles"></div>
+    <section id="roadmap" className="py-12 sm:py-16 px-4 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-emerald-500/5 rounded-full blur-xl animate-pulse delay-2000 transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-16 h-16 bg-yellow-500/5 rounded-full blur-lg animate-pulse delay-3000"></div>
+        
+        {/* Twinkling stars effect */}
+        <div className="stars">
+          <div className="star" style={{top: '10%', left: '20%'}}></div>
+          <div className="star" style={{top: '25%', left: '15%'}}></div>
+          <div className="star" style={{top: '15%', left: '30%'}}></div>
+          <div className="star" style={{top: '35%', left: '80%'}}></div>
+          <div className="star" style={{top: '45%', left: '70%'}}></div>
+          <div className="star" style={{top: '60%', left: '85%'}}></div>
+          <div className="star" style={{top: '75%', left: '25%'}}></div>
+          <div className="star" style={{top: '85%', left: '45%'}}></div>
+        </div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 heading-font">
             <span className="gradient-text">TECH FLIGHT PATH</span>
@@ -131,7 +145,7 @@ const Roadmap = () => {
               {/* Desktop Flight Path */}
               <path 
                 className="flight-path"
-                d="M 150 390 Q 250 100 380 180 Q 500 240 620 300 Q 740 360 850 150" 
+                d="M -30 350 Q 250 100 380 180 Q 500 240 620 300 Q 700 400 1100 150" 
                 stroke="url(#flightPathGradient)" 
                 strokeWidth="4" 
                 fill="none"
@@ -358,12 +372,10 @@ const Roadmap = () => {
             <p className="text-slate-300 text-sm sm:text-base mb-4 sm:mb-5">
               Join thousands of developers in this transformative 4-week experience
             </p>
-            <a href='https://tinyurl.com/InnovateXdscs' target='_blank' rel='noopener noreferrer'>
-              <button className="cyber-button bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 px-4 sm:px-6 py-1.5 sm:py-2 rounded-xl font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/30 relative overflow-hidden group">
-                <span className="relative z-10 text-sm sm:text-base">BOARD NOW</span>
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              </button>
-            </a>
+            <button className="cyber-button bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 px-4 sm:px-6 py-1.5 sm:py-2 rounded-xl font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/30 relative overflow-hidden group">
+              <span className="relative z-10 text-sm sm:text-base">BOARD NOW</span>
+              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            </button>
           </div>
         </div>
       </div>
