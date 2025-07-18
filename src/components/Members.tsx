@@ -83,9 +83,9 @@ const Members = () => {
                       )}
                     </div>
                   </div>
-                  <div className="absolute -top-1 -right-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full p-1 sm:p-1.5">
+                  {/* <div className="absolute -top-1 -right-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full p-1 sm:p-1.5">
                     <coordinator.icon className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" />
-                  </div>
+                  </div> */}
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-white mb-2 heading-font">{coordinator.name}</h3>
                 <p className="text-sm sm:text-base text-purple-400 mb-3 md:mb-4">{coordinator.role}</p>
@@ -114,9 +114,9 @@ const Members = () => {
                       )}
                     </div>
                   </div>
-                  <div className="absolute -top-1 -right-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full p-1 sm:p-1.5">
+                  {/* <div className="absolute -top-1 -right-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full p-1 sm:p-1.5">
                     <coordinator.icon className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" />
-                  </div>
+                  </div> */}
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-white mb-2 heading-font">{coordinator.name}</h3>
                 <p className="text-sm sm:text-base text-purple-400 mb-3 md:mb-4">{coordinator.role}</p>
