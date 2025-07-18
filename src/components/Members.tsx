@@ -6,6 +6,7 @@ import dharshanImage from '../assets/images/club_coordinators/dharshan.jpg';
 import bruno from '../assets/images/secretaries/bruno.jpeg';
 import deepak from '../assets/images/secretaries/deepak.png';
 import rahul from '../assets/images/club_coordinators/Rahul.jpg';
+import aravindan from '../assets/images/club_coordinators/Aravindan.jpg';
 
 const Members = () => {
   // Main Coordinators (First Row - 4 Cards)
@@ -23,7 +24,7 @@ const Members = () => {
       icon: Users
     },
     {
-      name: 'Deepak',
+      name: 'Deepakumar',
       role: 'Joint Secretary',
       image: deepak,
       icon: Users
@@ -40,7 +41,7 @@ const Members = () => {
   const clubCoordinators = [
     { name: 'Rahul', role: 'Hackhive Coordinator', image : rahul , icon: Code },
     { name: 'Dharshan Kumar J', role: 'Web Development Club Coordinator', image: dharshanImage, icon: Code },
-    { name: 'Arvindhan', role: 'Unbiased Club Coordinator', avatar: 'A', icon: Code }
+    { name: 'Aravindan', role: 'Unbiased Club Coordinator', image : aravindan , icon: Code }
   ];
 
   return (

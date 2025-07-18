@@ -9,7 +9,7 @@ const Footer = () => {
     { name: 'Roadmap', href: '#roadmap' },
     { name: 'Problems', href: '#problems' },
     { name: 'Teams', href: '#teams' },
-    // { name: 'Members', href: '#members' }
+    { name: 'Members', href: '#members' }
   ];
 
   const socialLinks = [
