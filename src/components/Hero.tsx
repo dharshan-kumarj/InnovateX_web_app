@@ -31,13 +31,14 @@ const Hero = () => {
           <div className="flex items-center justify-between h-10 sm:h-12 md:h-16 lg:h-20">
             {/* Left Logo - Karunya University */}
             <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-4">
-              <div className="relative w-7 h-7 xs:w-8 xs:h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-md sm:rounded-lg overflow-hidden border-2 border-cyan-500/50 hover:border-cyan-500/80 transition-colors duration-300">
+              <div className="relative w-7 h-7 xs:w-8 xs:h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-md sm:rounded-lg overflow-hidden border-2 border-cyan-500/50 hover:border-cyan-500/80 transition-colors duration-300
+                mx-2 xs:mx-3 sm:mx-0
+              ">
                 <img 
                   src={karunyaLogo} 
                   alt="Karunya University Logo" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
-                    // Fallback to icon if image fails to load
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                     target.nextElementSibling?.classList.remove('hidden');
@@ -68,13 +69,14 @@ const Hero = () => {
 
             {/* Right Logo - Atom */}
             <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-4">
-              <div className="relative w-7 h-7 xs:w-8 xs:h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-md sm:rounded-lg overflow-hidden border-2 border-purple-500/50 hover:border-purple-500/80 transition-colors duration-300">
+              <div className="relative w-7 h-7 xs:w-8 xs:h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-md sm:rounded-lg overflow-hidden border-2 border-purple-500/50 hover:border-purple-500/80 transition-colors duration-300
+                mx-2 xs:mx-3 sm:mx-0
+              ">
                 <img 
                   src={atomLogo} 
                   alt="Atom Club Logo" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
-                    // Fallback to icon if image fails to load
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                     target.nextElementSibling?.classList.remove('hidden');
@@ -190,14 +192,14 @@ const Hero = () => {
               <div className="inline-block bg-red-900/40 backdrop-blur-sm border border-red-500/50 rounded-full px-3 sm:px-4 md:px-6 py-1 sm:py-1.5 md:py-2">
                 <span className="text-red-400 text-xs sm:text-sm md:text-base lg:text-lg font-semibold tracking-wider flex items-center space-x-2">
                   <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
-                  <span className="sm:hidden">CLOSES MONDAY</span>
+                  <span className="sm:hidden ">CLOSES MONDAY</span>
                   <span className="hidden sm:inline">REGISTRATION CLOSES ON MONDAY</span>
                 </span>
               </div>
             </div>
             
             {/* Event Features - Mobile Stack with Better Space Utilization */}
-            <div className="grid grid-cols-1 xs:grid-cols-3 gap-y-2 xs:gap-x-3 sm:gap-x-4 md:gap-x-6 lg:gap-x-8 text-slate-400 max-w-xs xs:max-w-md mx-auto">
+            <div className="grid grid-cols-1 xs:grid-cols-3 gap-y-4 xs:gap-x-3 sm:gap-x-4 md:gap-x-6 lg:gap-x-8 text-slate-400 max-w-xs xs:max-w-md mx-auto">
               <div className="flex items-center justify-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-green-400 rounded-full"></div>
                 <span className="text-xs sm:text-sm md:text-base">Registration Open</span>
@@ -213,11 +215,11 @@ const Hero = () => {
             </div>
             
             {/* Mobile-only CTA Button */}
-            <div className="sm:hidden pt-3">
+            {/* <div className="sm:hidden pt-3">
               <button className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-6 py-2.5 rounded-xl font-semibold text-sm tracking-wider shadow-lg">
                 REGISTER NOW
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
