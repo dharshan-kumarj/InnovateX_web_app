@@ -3,10 +3,11 @@ import { Users, Shield, Code } from 'lucide-react';
 // Import images
 import studentImage from '../assets/images/event_coordintors/student/kevin.jpeg';
 import dharshanImage from '../assets/images/club_coordinators/dharshan.jpg';
-import bruno from '../assets/images/secretaries/bruno.jpeg';
+import bruno from '../assets/images/event_coordintors/student/bruno.png';
 import deepak from '../assets/images/secretaries/deepak.png';
 import rahul from '../assets/images/club_coordinators/Rahul.jpg';
-import aravindan from '../assets/images/club_coordinators/Aravindan.jpg';
+import aravindan from '../assets/images/club_coordinators/aravind.png';
+import nadhish from '../assets/images/event_coordintors/student/nadish.png';
 
 const Members = () => {
   type Coordinator = {
@@ -40,16 +41,16 @@ const Members = () => {
     {
       name: 'Nadhish',
       role: 'Event Coordinator',
-      avatar: 'N',
+      image: nadhish,
       icon: Shield
     }
   ];
 
   // Club Coordinators (Second Row - 3 Cards)
-  const clubCoordinators: Coordinator[] = [
-    { name: 'Rahul', role: 'Hackhive Coordinator', image : rahul , icon: Code },
-    { name: 'Dharshan Kumar J', role: 'DotDev Club Coordinator', image: dharshanImage, icon: Code },
-    { name: 'Aravindan', role: 'Unbiased Club Coordinator', image : aravindan , icon: Code }
+  const clubCoordinators = [
+    { name: 'Rahul', role: 'Co-ordinator - HackHive', image : rahul , icon: Code },
+    { name: 'Dharshan Kumar J', role: 'Co-ordinator - dot.Dev Club', image: dharshanImage, icon: Code },
+    { name: 'Aravindan', role: 'Co-ordinator - Unbiased Club', image : aravindan , icon: Code }
   ];
 
   return (

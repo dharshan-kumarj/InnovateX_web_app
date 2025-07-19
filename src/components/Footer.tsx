@@ -86,8 +86,8 @@ const Footer = () => {
                     <div>
                       <p className="text-white font-semibold text-xs sm:text-sm md:text-base">Kevin J</p>
                       <p className="text-slate-400 text-xs sm:text-sm">Secretary</p>
-                      <a href="tel:+15551234567" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-xs sm:text-sm md:text-base">
-                        9345639487
+                      <a href="tel:+919345639487" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-xs sm:text-sm md:text-base">
+                        +91 9345639487
                       </a>
                     </div>
                   </div>
@@ -96,8 +96,8 @@ const Footer = () => {
                     <div>
                       <p className="text-white font-semibold text-xs sm:text-sm md:text-base">Deepakumar</p>
                       <p className="text-slate-400 text-xs sm:text-sm">Joint Secretary</p>
-                      <a href="tel:+15551234567" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-xs sm:text-sm md:text-base">
-                        9345429463
+                      <a href="tel:+919345429463" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-xs sm:text-sm md:text-base">
+                       +91 9345429463
                       </a>
                     </div>
                   </div>
