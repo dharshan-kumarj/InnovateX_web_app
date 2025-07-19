@@ -4,7 +4,7 @@ const About = () => {
 
   const stats = [
     { icon: Users, value: '50+', label: 'Participants' },
-    { icon: Award, value: '8k', label: 'Prize Pool' },
+    { icon: Award, value: '7k', label: 'Prize Pool' },
     { icon: Zap, value: '48h', label: 'Hackathon' }
   ];
 
