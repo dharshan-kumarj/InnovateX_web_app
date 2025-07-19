@@ -25,15 +25,15 @@ const Roadmap = () => {
     {
       week: 1,
       title: 'AI/ML Bootcamp',
-      dates: 'July 21-25, 2025',
+      dates: ' 21-25 July, 2025',
       icon: Brain,
       color: 'text-purple-400',
       bgColor: 'bg-purple-400',
       bgGradient: 'from-purple-500/10 to-pink-500/10',
       speaker: {
         name: 'Dr. Vigneshwaran',
-        title: 'AI Research Scientist',
-        expertise: 'Neural Networks & Deep Learning'
+        // title: 'AI Research Scientist',
+        // expertise: 'Neural Networks & Deep Learning'
       },
       description: 'Dive deep into the world of artificial intelligence and machine learning with cutting-edge techniques and real-world applications.',
       position: isMobile ? { x: '20%', y: '20%' } : { x: '15%', y: '65%' },
@@ -41,15 +41,15 @@ const Roadmap = () => {
     {
       week: 2,
       title: 'Cyber Security',
-      dates: 'Aug 8-14, 2025',
+      dates: '28 July - 1 August, 2025',
       icon: Shield,
       color: 'text-cyan-400',
       bgColor: 'bg-cyan-400',
       bgGradient: 'from-cyan-500/10 to-blue-500/10',
       speaker: {
         name: 'Marcus Rodriguez',
-        title: 'Senior Security Engineer at Microsoft',
-        expertise: 'Penetration Testing & Security Architecture'
+        // title: 'Senior Security Engineer at Microsoft',
+        // expertise: 'Penetration Testing & Security Architecture'
       },
       description: 'Master the art of cybersecurity with hands-on experience in defensive and offensive security techniques.',
       position: isMobile ? { x: '80%', y: '35%' } : { x: '38%', y: '30%' },
@@ -57,15 +57,15 @@ const Roadmap = () => {
     {
       week: 3,
       title: 'Full Stack Dev',
-      dates: 'Aug 15-21, 2025',
+      dates: '4 - 8 August, 2025',
       icon: Code,
       color: 'text-emerald-400',
       bgColor: 'bg-emerald-400',
       bgGradient: 'from-emerald-500/10 to-green-500/10',
       speaker: {
-        name: 'Alex Thompson',
-        title: 'Lead Developer at Netflix',
-        expertise: 'React, Node.js & Cloud Architecture'
+        name: 'Ms. Maya',
+        // title: 'Lead Developer at Netflix',
+        // expertise: 'React, Node.js & Cloud Architecture'
       },
       description: 'Build scalable, modern web applications from frontend to backend with industry best practices.',
       position: isMobile ? { x: '20%', y: '60%' } : { x: '62%', y: '50%' },
@@ -73,16 +73,16 @@ const Roadmap = () => {
     {
       week: 4,
       title: 'Hackathon',
-      dates: 'Aug 22-24, 2025',
+      dates: ' 1-2 September, 2025',
       icon: Trophy,
       color: 'text-yellow-400',
       bgColor: 'bg-yellow-400',
       bgGradient: 'from-yellow-500/10 to-orange-500/10',
-      speaker: {
-        name: 'Team of Mentors',
-        title: 'Industry Experts & Judges',
-        expertise: 'Cross-domain Guidance & Evaluation'
-      },
+      // speaker: {
+      //   name: 'Team of Mentors',
+      //   title: 'Industry Experts & Judges',
+      //   expertise: 'Cross-domain Guidance & Evaluation'
+      // },
       description: '48-hour intensive coding marathon where you apply everything learned to build innovative solutions.',
       position: isMobile ? { x: '80%', y: '75%' } : { x: '85%', y: '25%' },
     }
@@ -158,14 +158,20 @@ const Roadmap = () => {
             <div className="absolute z-30">
               <div className="plane-animation">
                 <div className="plane-container">
-                  <Plane className="w-6 h-6 text-white transform drop-shadow-md" />
-                  <div className="absolute -left-6 top-1 w-8 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-50 plane-trail1"></div>
-                  <div className="absolute -left-4 top-1 w-6 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent opacity-40 plane-trail2"></div>
-                  <div className="absolute -left-3 top-1 w-4 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 plane-trail3"></div>
+                  <Plane className="w-7 h-7 text-white transform drop-shadow-md" />
+                  <div className="absolute -left-8 top-1 w-10 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60 plane-trail1"></div>
+                  <div className="absolute -left-6 top-1 w-8 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent opacity-50 plane-trail2"></div>
+                  <div className="absolute -left-4 top-1 w-5 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-40 plane-trail3"></div>
                   
-                  {/* Sparkle effect */}
+                  {/* Enhanced glow effect */}
+                  <div className="absolute inset-0 bg-white/10 rounded-full blur-md"></div>
+                  
+                  {/* Sparkle effects */}
                   <div className="plane-sparkle absolute -right-1 -top-1">
                     <Sparkles className="w-3 h-3 text-cyan-300" />
+                  </div>
+                  <div className="plane-sparkle2 absolute -right-2 top-2">
+                    <Sparkles className="w-2 h-2 text-purple-300" />
                   </div>
                 </div>
               </div>
@@ -184,68 +190,86 @@ const Roadmap = () => {
                 }}
               >
                 {/* Destination Marker */}
-                <div className={`relative w-12 h-12 rounded-full border-2 border-current ${week.color} flex items-center justify-center group-hover:scale-110 transition-all duration-300 backdrop-blur-sm bg-gray-900/80 marker-glow`}>
-                  <week.icon className={`w-5 h-5 ${week.color}`} />
+                <div className={`relative w-14 h-14 rounded-full border-2 border-current ${week.color} flex items-center justify-center group-hover:scale-125 transition-all duration-500 backdrop-blur-sm bg-gray-900/80 marker-glow hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]`}>
+                  <week.icon className={`w-6 h-6 ${week.color}`} />
                   
                   {/* Pulsing Ring */}
                   <div className={`absolute inset-0 w-full h-full rounded-full border border-current ${week.color} animate-ping opacity-30`}></div>
+                  <div className={`absolute inset-0 -m-1 w-[calc(100%+8px)] h-[calc(100%+8px)] rounded-full border border-current ${week.color} animate-ping opacity-20 animation-delay-500`}></div>
                   
                   {/* Week Number Badge */}
-                  <div className={`absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-gray-900 text-xs font-bold ${week.bgColor} shadow-lg shadow-${week.color}/20`}>
+                  <div className={`absolute -top-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center text-gray-900 text-xs font-bold ${week.bgColor} shadow-lg shadow-${week.color}/30`}>
                     {week.week}
                   </div>
                 </div>
 
-                {/* Info Card - positioned to avoid overlays */}
+                {/* Connector line that appears on hover */}
+                <div className={`absolute top-1/2 ${
+                  index % 2 === 0 
+                    ? 'left-full w-8 ml-1' 
+                    : 'right-full w-8 mr-1'
+                } h-0.5 bg-gradient-to-r ${
+                  index % 2 === 0 
+                    ? `from-${week.color} to-transparent` 
+                    : `from-transparent to-${week.color}`
+                } opacity-0 group-hover:opacity-40 transform scale-x-0 group-hover:scale-x-100 transition-all duration-500 origin-${index % 2 === 0 ? 'left' : 'right'}`}></div>
+
+                {/* Info Card - improved hover effect and positioning */}
                 <div className={`absolute ${
                     index % 2 === 0 
-                      ? '-left-16 top-0' 
-                      : '-right-16 top-0'
-                  } w-72 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-y-0 translate-y-2 pointer-events-none group-hover:pointer-events-auto z-40 info-card-container`}>
-                  <div className={`cyber-card p-4 bg-gradient-to-br ${week.bgGradient} border border-gray-700 hover:border-current/40 backdrop-blur-md shadow-xl info-card`}>
-                    {/* Card Header */}
-                    <div className="flex items-center justify-between mb-3">
-                      <span className={`text-xs font-bold ${week.color}`}>WEEK {week.week}</span>
-                      <div className="flex items-center text-xs text-slate-400">
-                        <Calendar className="w-3 h-3 mr-1" />
-                        {week.dates}
+                      ? '-left-84 top-0 translate-x-[-20px]' 
+                      : '-right-84 top-0 translate-x-[20px]'
+                  } w-72 opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:translate-y-0 group-hover:translate-x-0 pointer-events-none group-hover:pointer-events-auto z-40 info-card-container`}>
+                  <div className={`cyber-card p-5 bg-gradient-to-br ${week.bgGradient} border-2 border-gray-700/50 hover:border-${week.color}/40 backdrop-blur-md shadow-xl shadow-${week.color}/10 info-card hover:shadow-2xl hover:shadow-${week.color}/20`}>
+                    {/* Card Header with enhanced glowing accent */}
+                    <div className="relative">
+                      <div className={`absolute -left-5 -top-5 -right-5 h-1 ${week.bgColor}/40 rounded blur-md`}></div>
+                      <div className={`absolute -left-5 bottom-[-5px] -right-5 h-0.5 ${week.bgColor}/20 rounded blur-md`}></div>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className={`text-sm font-bold ${week.color}`}>WEEK {week.week}</span>
+                        <div className="flex items-center text-xs text-slate-400">
+                          <Calendar className="w-3 h-3 mr-1" />
+                          {week.dates}
+                        </div>
                       </div>
                     </div>
 
-                    {/* Title */}
-                    <h3 className="text-base font-bold text-white mb-2 heading-font">
+                    {/* Title with subtle glow */}
+                    <h3 className={`text-lg font-bold text-white mb-2 heading-font drop-shadow-sm`}>
                       {week.title}
                     </h3>
                     
-                    {/* Description */}
-                    <p className="text-xs text-slate-300 mb-3 leading-relaxed line-clamp-2">
-                      {week.description}
-                    </p>
+                    <div className="card-content">
+                      {/* Description */}
+                      <p className="text-xs text-slate-300 mb-3 leading-relaxed line-clamp-2">
+                        {week.description}
+                      </p>
 
-                    {/* Speaker */}
-                    <div className="flex items-center mb-3 border-t border-gray-700/50 pt-2 mt-2">
-                      <div className={`w-6 h-6 rounded-full flex items-center justify-center mr-2 ${week.bgColor}`}>
-                        <User className="w-3 h-3 text-gray-900" />
+                      {/* Speaker */}
+                      <div className="flex items-center mb-3 border-t border-gray-700/50 pt-2 mt-2">
+                        <div className={`w-6 h-6 rounded-full flex items-center justify-center mr-2 ${week.bgColor}`}>
+                          <User className="w-3 h-3 text-gray-900" />
+                        </div>
+                        <div>
+                          <p className="text-white text-xs font-bold">{week.speaker?.name}</p>
+                          {/* <p className="text-slate-400 text-xs">{week.speaker.title}</p> */}
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-white text-xs font-bold">{week.speaker.name}</p>
-                        <p className="text-slate-400 text-xs">{week.speaker.title}</p>
-                      </div>
-                    </div>
 
-                    {/* Duration */}
-                    <div className="flex items-center justify-between text-xs">
-                      <div className="flex items-center">
-                        <Clock className={`w-3 h-3 ${week.color} mr-1`} />
-                        <span className="text-slate-400">
-                          {week.week === 4 ? '48h Sprint' : '7 Days'}
-                        </span>
-                      </div>
-                      
-                      {/* Expertise tag */}
-                      <div className={`px-2 py-0.5 rounded-full ${week.bgColor}/20 ${week.color} text-xs`}>
-                        <Zap className="w-2 h-2 inline mr-1" />
-                        {week.speaker.expertise.split(' & ')[0]}
+                      {/* Duration */}
+                      <div className="flex items-center justify-between text-xs">
+                        <div className="flex items-center">
+                          <Clock className={`w-3 h-3 ${week.color} mr-1`} />
+                          <span className="text-slate-400">
+                            {week.week === 4 ? '48h Sprint' : '5 Days'}
+                          </span>
+                        </div>
+                        
+                        {/* Expertise tag */}
+                        {/* <div className={`px-2 py-0.5 rounded-full ${week.bgColor}/20 ${week.color} text-xs`}>
+                          <Zap className="w-2 h-2 inline mr-1" />
+                          {week.speaker.expertise.split(' & ')[0]}
+                        </div> */}
                       </div>
                     </div>
                   </div>
@@ -283,31 +307,27 @@ const Roadmap = () => {
                 className={`mobile-timeline-card ${activeCard === index ? 'active' : ''}`}
                 onClick={() => handleToggleCard(index)}
               >
-                {/* Timeline node */}
+                {/* Timeline node without icon */}
                 <div className="absolute left-4 transform -translate-x-1/2 flex items-center justify-center">
                   <div className={`w-8 h-8 rounded-full ${week.bgColor} flex items-center justify-center z-20`}>
-                    <week.icon className="w-4 h-4 text-gray-900" />
+                    {/* Week number instead of icon */}
+                    <span className="text-gray-900 text-sm font-bold">{week.week}</span>
                   </div>
                   
                   {/* Pulsing ring */}
                   <div className={`absolute w-8 h-8 rounded-full border border-current ${week.color} animate-ping opacity-30`}></div>
-                  
-                  {/* Week indicator */}
-                  <div className={`absolute -top-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center bg-gray-900 text-[10px] font-bold ${week.color} border border-current`}>
-                    {week.week}
-                  </div>
                 </div>
                 
                 {/* Card content */}
-                <div className={`cyber-card relative overflow-hidden transition-all duration-300 bg-gradient-to-br ${week.bgGradient} border border-gray-700 backdrop-blur-md ${activeCard === index ? 'shadow-lg' : 'shadow'}`}>
+                <div className={`cyber-card relative overflow-hidden transition-all duration-300 bg-gradient-to-br ${week.bgGradient} border border-gray-700 backdrop-blur-md ${activeCard === index ? 'shadow-lg shadow-' + week.color + '/20' : 'shadow'}`}>
                   {/* Collapsed header */}
                   <div className="flex items-center justify-between p-3">
                     <div className="flex items-center">
                       <h3 className="text-base font-bold text-white heading-font mr-2">
                         {week.title}
                       </h3>
-                      <div className={`px-1.5 py-0.5 rounded-full ${week.bgColor}/20 ${week.color} text-[10px]`}>
-                        W{week.week}
+                      <div className={`px-2 py-1 rounded-full ${week.bgColor}/20 ${week.color} text-xs`}>
+                        {week.dates}
                       </div>
                     </div>
                     
@@ -319,40 +339,25 @@ const Roadmap = () => {
                   {/* Expandable content */}
                   <div className={`transition-all duration-300 origin-top ${activeCard === index ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                     <div className="p-3 pt-0">
-                      {/* Date info */}
-                      <div className="flex items-center text-xs text-slate-300 mb-2">
-                        <Calendar className="w-3 h-3 mr-1" />
-                        {week.dates}
-                      </div>
-                      
-                      {/* Description */}
-                      <p className="text-xs text-slate-300 mb-3 leading-relaxed">
+                      {/* Description with enhanced styling */}
+                      <p className="text-xs text-slate-300 mb-3 leading-relaxed border-l-2 border-${week.color}/30 pl-3">
                         {week.description}
                       </p>
                       
-                      {/* Speaker */}
+                      {/* Speaker with simplified design (no icon) */}
                       <div className="flex items-center mb-3 border-t border-gray-700/50 pt-2 mt-2">
-                        <div className={`w-6 h-6 rounded-full flex items-center justify-center mr-2 ${week.bgColor}`}>
-                          <User className="w-3 h-3 text-gray-900" />
-                        </div>
                         <div>
-                          <p className="text-white text-xs font-bold">{week.speaker.name}</p>
-                          <p className="text-slate-400 text-xs">{week.speaker.title}</p>
+                          <p className="text-white text-xs font-bold">{week.speaker?.name}</p>
                         </div>
                       </div>
                       
-                      {/* Footer */}
+                      {/* Footer with simplified design */}
                       <div className="flex items-center justify-between text-xs">
                         <div className="flex items-center">
                           <Clock className={`w-3 h-3 ${week.color} mr-1`} />
                           <span className="text-slate-400">
-                            {week.week === 4 ? '48h Sprint' : '7 Days'}
+                            {week.week === 4 ? '48h Sprint' : '5 Days'}
                           </span>
-                        </div>
-                        
-                        <div className={`px-2 py-0.5 rounded-full ${week.bgColor}/20 ${week.color} text-xs`}>
-                          <Zap className="w-2 h-2 inline mr-1" />
-                          {week.speaker.expertise.split(' ')[0]}
                         </div>
                       </div>
                     </div>
@@ -384,11 +389,18 @@ const Roadmap = () => {
       <style>{`
         /* Plane Animation */
         .plane-animation {
-          animation: flightPath 18s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          animation: flightPathDesktop 18s cubic-bezier(0.4, 0, 0.2, 1) infinite;
         }
         
         .mobile-plane-animation {
           animation: verticalFlightPath 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        
+        /* Device-specific flight path animations */
+        @media (min-width: 768px) {
+          .plane-animation {
+            animation: flightPathDesktop 18s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          }
         }
         
         .plane-trail1 {
@@ -407,6 +419,10 @@ const Roadmap = () => {
           animation: sparkle 2s ease-in-out infinite;
         }
         
+        .plane-sparkle2 {
+          animation: sparkle 2.5s ease-in-out 0.7s infinite;
+        }
+        
         .flight-path {
           animation: pathGlow 4s ease-in-out infinite;
         }
@@ -417,16 +433,45 @@ const Roadmap = () => {
         }
         
         .destination-point:hover .marker-glow {
-          box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+          box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
         }
         
         .info-card {
-          transform: perspective(1000px) rotateY(0deg);
-          transition: transform 0.5s ease, opacity 0.3s ease;
+          transform: perspective(1000px) rotateY(0deg) translateZ(0);
+          transition: transform 0.5s ease, opacity 0.3s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+          will-change: transform, opacity;
         }
         
         .info-card-container:hover .info-card {
-          transform: perspective(1000px) rotateY(5deg);
+          transform: perspective(1000px) rotateY(5deg) translateZ(10px);
+        }
+        
+        /* Staggered animation for card content */
+        .info-card-container .card-content > * {
+          opacity: 0;
+          transform: translateY(10px);
+          transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .info-card-container:hover .card-content > * {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        .info-card-container:hover .card-content > *:nth-child(1) {
+          transition-delay: 0.1s;
+        }
+        
+        .info-card-container:hover .card-content > *:nth-child(2) {
+          transition-delay: 0.15s;
+        }
+        
+        .info-card-container:hover .card-content > *:nth-child(3) {
+          transition-delay: 0.2s;
+        }
+        
+        .info-card-container:hover .card-content > *:nth-child(4) {
+          transition-delay: 0.25s;
         }
         
         /* Mobile Timeline Card */
@@ -483,10 +528,15 @@ const Roadmap = () => {
           50% { opacity: 1; transform: scale(1.2) rotate(15deg); }
         }
         
-        /* Desktop flight path animation */
-        @keyframes flightPath {
+        /* Animation delay utility */
+        .animation-delay-500 {
+          animation-delay: 500ms;
+        }
+        
+        /* Improved desktop flight path animation */
+        @keyframes flightPathDesktop {
           0% { 
-            transform: translate(150px, 390px) rotate(0deg); 
+            transform: translate(-20px, 345px) rotate(0deg); 
             opacity: 0;
             scale: 0.7;
           }
@@ -495,39 +545,44 @@ const Roadmap = () => {
             scale: 1;
           }
           24% { 
-            transform: translate(350px, 190px) rotate(-25deg); 
+            transform: translate(150px, 235px) rotate(-30deg); 
           }
           25% { 
-            transform: translate(380px, 180px) rotate(-20deg); 
+            transform: translate(180px, 190px) rotate(-25deg); 
           }
           26% { 
-            transform: translate(400px, 185px) rotate(-15deg); 
+            transform: translate(210px, 170px) rotate(-20deg); 
           }
           49% { 
-            transform: translate(600px, 290px) rotate(15deg); 
+            transform: translate(370px, 180px) rotate(-10deg); 
           }
           50% { 
-            transform: translate(620px, 300px) rotate(20deg); 
+            transform: translate(390px, 185px) rotate(-5deg); 
           }
           51% { 
-            transform: translate(640px, 305px) rotate(25deg); 
+            transform: translate(410px, 195px) rotate(0deg); 
           }
           74% { 
-            transform: translate(830px, 170px) rotate(-10deg); 
+            transform: translate(600px, 280px) rotate(18deg); 
           }
           75% { 
-            transform: translate(850px, 150px) rotate(-15deg); 
+            transform: translate(625px, 295px) rotate(22deg); 
           }
           76% { 
-            transform: translate(860px, 145px) rotate(-20deg); 
+            transform: translate(650px, 315px) rotate(25deg); 
           }
-          95% { 
-            transform: translate(850px, 150px) rotate(0deg); 
+          90% { 
+            transform: translate(820px, 200px) rotate(-15deg); 
             opacity: 1;
             scale: 1;
           }
+          95% { 
+            transform: translate(850px, 170px) rotate(-20deg); 
+            opacity: 0.5;
+            scale: 0.9;
+          }
           100% { 
-            transform: translate(850px, 150px) rotate(0deg); 
+            transform: translate(870px, 150px) rotate(-25deg); 
             opacity: 0;
             scale: 0.7;
           }
@@ -548,26 +603,27 @@ const Roadmap = () => {
             transform: translateY(60px); 
           }
           25% { 
-            transform: translateY(60px); 
+            transform: translateY(70px); 
           }
           45% { 
             transform: translateY(180px); 
           }
           50% { 
-            transform: translateY(180px); 
+            transform: translateY(190px); 
           }
           70% { 
             transform: translateY(300px); 
           }
           75% { 
-            transform: translateY(300px); 
+            transform: translateY(310px); 
           }
           90% { 
             transform: translateY(420px); 
           }
           95% { 
             transform: translateY(420px); 
-            opacity: 1;
+            opacity: 0.5;
+            scale: 0.9;
           }
           100% { 
             transform: translateY(420px); 
