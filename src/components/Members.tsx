@@ -8,7 +8,7 @@ import deepak from '../assets/images/secretaries/deepak.png';
 import rahul from '../assets/images/club_coordinators/Rahul.jpg';
 import aravindan from '../assets/images/club_coordinators/aravind.png';
 import nadhish from '../assets/images/event_coordintors/student/nadish.png';
-import nesan from '../assets/images/event_coordintors/student/nesan.png';
+import nesan from '../assets/images/event_coordintors/student/nesan.jpeg';
 
 const Members = () => {
   type Coordinator = {
@@ -56,7 +56,7 @@ const Members = () => {
 
   // Publicity Designer Card (Separate)
   const publicityDesigner = {
-    name: 'Nesan',
+    name: 'Sanjay Nesan J',
     role: 'Publicity Designer',
     image: nesan,
     icon: Users
