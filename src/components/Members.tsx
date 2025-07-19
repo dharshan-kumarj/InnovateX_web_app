@@ -50,7 +50,7 @@ const Members = () => {
   // Club Coordinators (Second Row - 3 Cards)
   const clubCoordinators = [
     { name: 'Rahul', role: 'Co-ordinator - HackHive', image : rahul , icon: Code },
-    { name: 'Dharshan Kumar J', role: 'Co-ordinator - Web Development Club', image: dharshanImage, icon: Code },
+    { name: 'Dharshan Kumar J', role: 'Co-ordinator - DotDev Club', image: dharshanImage, icon: Code },
     { name: 'Aravindan', role: 'Co-ordinator - Unbiased Club', image : aravindan , icon: Code }
   ];
 
