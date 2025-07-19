@@ -3,8 +3,8 @@ import { Brain, Shield, Award, Users, Zap } from 'lucide-react';
 const About = () => {
 
   const stats = [
-    { icon: Users, value: '50+', label: 'Participants' },
-    { icon: Award, value: '8k', label: 'Prize Pool' },
+    { icon: Users, value: '200+', label: 'Participants' },
+    { icon: Award, value: '7k', label: 'Prize Pool' },
     { icon: Zap, value: '48h', label: 'Hackathon' }
   ];
 
