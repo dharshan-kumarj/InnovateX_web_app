@@ -10,8 +10,16 @@ import aravindan from '../assets/images/club_coordinators/aravind.png';
 import nadhish from '../assets/images/event_coordintors/student/nadish.png';
 
 const Members = () => {
+  type Coordinator = {
+    name: string;
+    role: string;
+    image?: string;
+    icon: typeof Users | typeof Shield | typeof Code;
+    avatar?: string;
+  };
+
   // Main Coordinators (First Row - 4 Cards)
-  const mainCoordinators = [
+  const mainCoordinators: Coordinator[] = [
     {
       name: 'Kevin',
       role: 'Secretary',
@@ -41,7 +49,7 @@ const Members = () => {
   // Club Coordinators (Second Row - 3 Cards)
   const clubCoordinators = [
     { name: 'Rahul', role: 'Co-ordinator - HackHive', image : rahul , icon: Code },
-    { name: 'Dharshan Kumar J', role: 'Co-ordinator - Web Development Club', image: dharshanImage, icon: Code },
+    { name: 'Dharshan Kumar J', role: 'Co-ordinator - dot.Dev Club', image: dharshanImage, icon: Code },
     { name: 'Aravindan', role: 'Co-ordinator - Unbiased Club', image : aravindan , icon: Code }
   ];
 
