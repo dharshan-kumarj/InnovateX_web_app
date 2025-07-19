@@ -40,8 +40,8 @@ const Members = () => {
 
   // Club Coordinators (Second Row - 3 Cards)
   const clubCoordinators = [
-    { name: 'Rahul', role: 'Co-ordinator - HackHive', image : rahul , icon: Code },
-    { name: 'Dharshan Kumar J', role: 'Co-ordinator - Web Development Club', image: dharshanImage, icon: Code },
+    { name: 'Rahul', role: 'Co-ordinator - HackHive ', image : rahul , icon: Code },
+    { name: 'Dharshan Kumar J', role: 'Co-ordinator - DotDev Club', image: dharshanImage, icon: Code },
     { name: 'Aravindan', role: 'Co-ordinator - Unbiased Club', image : aravindan , icon: Code }
   ];
 
@@ -80,7 +80,7 @@ const Members = () => {
                         />
                       ) : (
                         <div className="w-full h-full bg-black flex items-center justify-center">
-                          <span className="text-xl sm:text-2xl font-bold text-white">{coordinator.avatar || coordinator.name.charAt(0)}</span>
+                          <span className="text-xl sm:text-2xl font-bold text-white">{coordinator.name.charAt(0)}</span>
                         </div>
                       )}
                     </div>
@@ -111,7 +111,7 @@ const Members = () => {
                         />
                       ) : (
                         <div className="w-full h-full bg-black flex items-center justify-center">
-                          <span className="text-xl sm:text-2xl font-bold text-white">{coordinator.avatar || coordinator.name.charAt(0)}</span>
+                          <span className="text-xl sm:text-2xl font-bold text-white">{coordinator.name.charAt(0)}</span>
                         </div>
                       )}
                     </div>
