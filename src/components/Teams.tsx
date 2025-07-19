@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Users, Brain, Shield, RefreshCw, AlertCircle, Loader2 } from 'lucide-react';
+import { Users, Brain, Shield, RefreshCw, AlertCircle, Loader2, Crown } from 'lucide-react';
 import axios from 'axios';
 
 interface Team { 
   team_name: string; 
   domains: string; 
+  team_leader: string;
 }
 
 interface ApiResponse {
@@ -199,6 +200,14 @@ const Teams = () => {
                         <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 heading-font group-hover:text-cyan-400 transition-colors duration-500 leading-tight">
                           {team.team_name}
                         </h3>
+
+                        {/* Team Leader */}
+                        <div className="flex items-center space-x-2 mb-2">
+                          <Crown className="w-3 h-3 text-cyan-400 flex-shrink-0" />
+                          <span className="text-slate-300 text-xs sm:text-sm font-medium truncate">
+                            {team.team_leader}
+                          </span>
+                        </div>
 
                         {/* Domain Info */}
                         <div className="flex items-center space-x-2 mb-3">
