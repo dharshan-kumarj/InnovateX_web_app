@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import CountdownTimer from './CountdownTimer';
-import { Zap, Code, Cpu, Home, Users, FileText, Crown, Mail, Menu, X } from 'lucide-react';
+import { Zap, Code, Cpu, Home, Users, FileText, Crown, Mail } from 'lucide-react';
 import karunyaLogo from '../assets/images/Logo/karunya.jpeg';
 import atomLogo from '../assets/images/Logo/Atom.png';
 
@@ -183,6 +183,15 @@ const Hero = () => {
           {/* Enhanced Countdown Timer - Reduced Spacing */}
           <div className="mb-3 sm:mb-4 md:mb-6 lg:mb-8 py-3">
             <CountdownTimer />
+          </div>
+          
+          {/* AI/ML Bootcamp Announcement - Scrolling Text */}
+          <div className="mb-4 sm:mb-6 overflow-hidden bg-gradient-to-r from-blue-900/40 to-purple-900/40 backdrop-blur-sm border border-blue-500/30 rounded-xl py-2 sm:py-3">
+            <div className="whitespace-nowrap animate-scroll">
+              <span className="text-blue-300 text-sm sm:text-base md:text-lg font-semibold tracking-wide">
+                🚀 UPCOMING: AI/ML BOOTCAMP - Dive deep into Machine Learning & Artificial Intelligence | 21st July - 25th July | Registered Team Must Attend !
+              </span>
+            </div>
           </div>
           
           {/* Event Info - Compact for Mobile */}

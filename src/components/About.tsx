@@ -9,7 +9,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="relative py-12 sm:py-16 md:py-20 px-4">
+    <section id="about" className="relative py-8 sm:py-12 md:py-12 px-4">
       {/* Background Elements - Same as Hero */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="cyber-grid"></div>
@@ -70,7 +70,7 @@ const About = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="py-8 sm:py-12 md:py-16 px-4 border-t border-slate-800/50 mb-12 md:mb-16">
+        <div className="py-2 sm:py-12 md:py-16 px-4 border-t border-slate-800/50 mb-12 md:mb-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold gradient-text heading-font mb-3 md:mb-4">
@@ -83,7 +83,7 @@ const About = () => {
                 const IconComponent = stat.icon;
                 return (
                   <div key={index} className="text-center group">
-                    <div className="cyber-card p-4 sm:p-5 md:p-6 hover-lift">
+                    <div className="cyber-card px-4 sm:p-5 md:p-6 hover-lift">
                       <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-purple-400 mx-auto mb-2 md:mb-3 icon-glow" />
                       <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1 md:mb-2 heading-font">{stat.value}</div>
                       <div className="text-slate-400 text-xs sm:text-sm font-medium">{stat.label}</div>
