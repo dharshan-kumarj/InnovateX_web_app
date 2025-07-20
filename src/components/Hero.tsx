@@ -189,20 +189,20 @@ const Hero = () => {
           <div className="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6">
             {/* Registration Closing Notice - More Compact */}
             <div className="mb-2 sm:mb-4">
-              <div className="inline-block bg-red-900/40 backdrop-blur-sm border border-red-500/50 rounded-full px-3 sm:px-4 md:px-6 py-1 sm:py-1.5 md:py-2">
+              {/* <div className="inline-block bg-red-900/40 backdrop-blur-sm border border-red-500/50 rounded-full px-3 sm:px-4 md:px-6 py-1 sm:py-1.5 md:py-2">
                 <span className="text-red-400 text-xs sm:text-sm md:text-base lg:text-lg font-semibold tracking-wider flex items-center space-x-2">
                   <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
                   <span className="sm:hidden ">CLOSES MONDAY</span>
                   <span className="hidden sm:inline">REGISTRATION CLOSES ON MONDAY</span>
                 </span>
-              </div>
+              </div> */}
             </div>
             
             {/* Event Features - Mobile Stack with Better Space Utilization */}
             <div className="grid grid-cols-1 xs:grid-cols-3 gap-y-4 xs:gap-x-3 sm:gap-x-4 md:gap-x-6 lg:gap-x-8 text-slate-400 max-w-xs xs:max-w-md mx-auto">
               <div className="flex items-center justify-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-green-400 rounded-full"></div>
-                <span className="text-xs sm:text-sm md:text-base">Registration Open</span>
+                <span className="text-xs sm:text-sm md:text-base">Registration Closed</span>
               </div>
               <div className="flex items-center justify-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-yellow-400 rounded-full"></div>
