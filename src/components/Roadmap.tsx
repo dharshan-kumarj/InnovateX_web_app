@@ -369,7 +369,7 @@ const Roadmap = () => {
         </div>
 
         {/* Enhanced Call to action */}
-        <div className="text-center mt-8">
+        {/* <div className="text-center mt-8">
           <div className="cyber-card p-4 sm:p-6 bg-gradient-to-r from-purple-500/10 via-cyan-500/10 to-emerald-500/10 border-2 border-cyan-400/30 max-w-2xl mx-auto hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-500 hover:scale-105">
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3 heading-font">
               Ready for Takeoff?
@@ -382,7 +382,7 @@ const Roadmap = () => {
               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* CSS for Animations */}

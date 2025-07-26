@@ -189,7 +189,8 @@ const Hero = () => {
           <div className="mb-4 sm:mb-6 overflow-hidden bg-gradient-to-r from-blue-900/40 to-purple-900/40 backdrop-blur-sm border border-blue-500/30 rounded-xl py-2 sm:py-3">
             <div className="whitespace-nowrap animate-scroll">
               <span className="text-blue-300 text-sm sm:text-base md:text-lg font-semibold tracking-wide">
-                🚀 UPCOMING: AI/ML BOOTCAMP - Dive deep into Machine Learning & Artificial Intelligence | 21st July - 25th July | Registered Team Must Attend !
+                🚀 UPCOMING: Cyber BOOTCAMP - Dive deep into Cyber Security | 28th July - 1st August | Registered Team Must Attend | Time : 4:00 PM | Venue :  Seminar Hall Ground Floor, Division Of DSCS |
+
               </span>
             </div>
           </div>
