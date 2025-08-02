@@ -122,7 +122,7 @@ const Hero = () => {
 
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="cyber-grid"></div>
+        <div className="Full Stack-grid"></div>
         <div className="floating-particles"></div>
       </div>
       
@@ -133,8 +133,8 @@ const Hero = () => {
           <div className="mb-3 sm:mb-3 md:mb-4">
             <div className="inline-block bg-slate-900/60 backdrop-blur-sm border border-slate-700/60 rounded-full px-4 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-1.5 md:py-2">
               <span className="text-cyan-400 text-xs sm:text-sm md:text-base lg:text-lg font-semibold tracking-wider">
-                <span className="sm:hidden">DATA SCIENCE & CYBER SECURITY</span>
-                <span className="hidden sm:inline">DIVISION OF DATA SCIENCE AND CYBER SECURITY</span>
+                <span className="sm:hidden">DATA SCIENCE & Full Stack SECURITY</span>
+                <span className="hidden sm:inline">DIVISION OF DATA SCIENCE AND Full Stack SECURITY</span>
               </span>
             </div>
           </div>
@@ -189,7 +189,7 @@ const Hero = () => {
           <div className="mb-4 sm:mb-6 overflow-hidden bg-gradient-to-r from-blue-900/40 to-purple-900/40 backdrop-blur-sm border border-blue-500/30 rounded-xl py-2 sm:py-3">
             <div className="whitespace-nowrap animate-scroll">
               <span className="text-blue-300 text-sm sm:text-base md:text-lg font-semibold tracking-wide">
-                🚀 UPCOMING: Cyber BOOTCAMP - Dive deep into Cyber Security | 28th July - 1st August | Registered Team Must Attend | Time : 4:00 PM | Venue :  Seminar Hall Ground Floor, Division Of DSCS |
+                🚀 UPCOMING: Full Stack BOOTCAMP - Dive deep into Full Stack | 4th August - 8th August | All Registered Team Must Attend | Time : 4:00 PM | Venue :  Seminar Hall Ground Floor, Division Of DSCS |
 
               </span>
             </div>
@@ -220,7 +220,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center justify-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-purple-400 rounded-full"></div>
-                <span className="text-xs sm:text-sm md:text-base">AI & Cyber Security</span>
+                <span className="text-xs sm:text-sm md:text-base">AI & Full Stack Security</span>
               </div>
             </div>
             
