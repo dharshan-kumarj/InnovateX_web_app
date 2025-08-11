@@ -186,14 +186,14 @@ const Hero = () => {
           </div>
           
           {/* AI/ML Bootcamp Announcement - Scrolling Text */}
-          <div className="mb-4 sm:mb-6 overflow-hidden bg-gradient-to-r from-blue-900/40 to-purple-900/40 backdrop-blur-sm border border-blue-500/30 rounded-xl py-2 sm:py-3">
+          {/* <div className="mb-4 sm:mb-6 overflow-hidden bg-gradient-to-r from-blue-900/40 to-purple-900/40 backdrop-blur-sm border border-blue-500/30 rounded-xl py-2 sm:py-3">
             <div className="whitespace-nowrap animate-scroll">
               <span className="text-blue-300 text-sm sm:text-base md:text-lg font-semibold tracking-wide">
                 🚀 UPCOMING: Full Stack BOOTCAMP - Dive deep into Full Stack | 4th August - 8th August | All Registered Team Must Attend | Time : 4:00 PM | Venue :  Seminar Hall Ground Floor, Division Of DSCS |
 
               </span>
             </div>
-          </div>
+          </div> */}
           
           {/* Event Info - Compact for Mobile */}
           <div className="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6">

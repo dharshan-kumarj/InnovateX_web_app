@@ -104,7 +104,7 @@ const Teams = () => {
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-4xl md:text-6xl font-bold heading-font">
-            <span className="gradient-text">REGISTERED</span> TEAMS
+            <span className="gradient-text">Eligible</span> TEAMS
           </h2>
           <div className="cyber-divider mx-auto"></div>
 
