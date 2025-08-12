@@ -149,7 +149,7 @@ const Teams = () => {
           {loading && teams.length === 0 ? (
             <div className="text-center py-12">
               <Loader2 className="w-8 h-8 animate-spin text-cyan-400 mx-auto mb-4" />
-              <p className="text-slate-300">Fetching registered teams...</p>
+              <p className="text-slate-300">Fetching Eligible teams...</p>
             </div>
           ) : error ? (
             <div className="text-center py-12">
@@ -198,7 +198,7 @@ const Teams = () => {
                       <span className="text-slate-400 text-sm">{team.domains}</span>
                     </div>
                     <div className="text-xs text-slate-500 flex justify-between">
-                      <span>Registered Team</span>
+                      <span>Eligible Team</span>
                       <div className="flex items-center space-x-1">
                         <div className="w-2 h-2 bg-green-400 rounded-full" />
                         <span>Active</span>
