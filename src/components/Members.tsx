@@ -1,7 +1,7 @@
 import { Users, Shield, Code } from 'lucide-react';
 
 // Import images
-import studentImage from '../assets/images/event_coordintors/student/kevin.jpg';
+import studentImage from '../assets/images/event_coordintors/student/kevin.png';
 import dharshanImage from '../assets/images/club_coordinators/dharshan.jpg';
 import bruno from '../assets/images/event_coordintors/student/bruno.png';
 import deepak from '../assets/images/secretaries/deepak.png';
