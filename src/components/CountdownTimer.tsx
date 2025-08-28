@@ -10,7 +10,7 @@ const CountdownTimer = () => {
   });
 
   // Set your event date here
-  const eventDate = new Date('2025-09-01T23:59:59').getTime();
+  const eventDate = new Date('2025-09-02T23:59:59').getTime();
 
   useEffect(() => {
     const timer = setInterval(() => {
