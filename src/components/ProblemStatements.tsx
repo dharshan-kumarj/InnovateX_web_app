@@ -1,10 +1,21 @@
 import { useState } from 'react';
-import { Brain, Shield, Clock, Zap, ArrowRight, Target, Code, Lightbulb, Sparkles, Star, Hexagon } from 'lucide-react';
+import { Brain, Shield, Clock, Zap, ArrowRight, Target, Lightbulb, Sparkles, Star, Hexagon, X } from 'lucide-react';
 import { problems, problemStatementsConfig } from '../data/problemStatementsData';
 
 const ProblemStatements = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedDomain, setSelectedDomain] = useState<string | null>(null);
+  const [selectedProblem, setSelectedProblem] = useState<number | null>(null);
+
+  const openModal = (index: number) => {
+    setSelectedProblem(index);
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+  };
+
+  const closeModal = () => {
+    setSelectedProblem(null);
+    document.body.style.overflow = 'auto'; // Restore scroll
+  };
 
   const getDomainIcon = (domain: string) => {
     return domain === 'AI' ? Brain : Shield;
@@ -26,6 +37,49 @@ const ProblemStatements = () => {
 
   const getDomainAccent = (domain: string) => {
     return domain === 'AI' ? 'purple' : 'cyan';
+  };
+
+  // Function to format text with bullet points
+  const formatText = (text: string) => {
+    // Split by bullet point indicators and clean up
+    const parts = text.split(/[●•·]/).filter(part => part.trim() !== '');
+    
+    // If no bullet points found, return as paragraph
+    if (parts.length <= 1) {
+      return (
+        <p className="text-slate-300 leading-relaxed whitespace-pre-line">
+          {text.trim()}
+        </p>
+      );
+    }
+
+    // Format as bullet points
+    return (
+      <div className="space-y-3">
+        {parts.map((part, index) => {
+          const trimmedPart = part.trim();
+          if (!trimmedPart) return null;
+          
+          // First part might be intro text before bullets
+          if (index === 0 && !trimmedPart.includes(':') && trimmedPart.length > 100) {
+            return (
+              <p key={index} className="text-slate-300 leading-relaxed mb-4">
+                {trimmedPart}
+              </p>
+            );
+          }
+          
+          return (
+            <div key={index} className="flex items-start space-x-3">
+              <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+              <p className="text-slate-300 leading-relaxed flex-1">
+                {trimmedPart}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+    );
   };
 
   // Coming Soon Component
@@ -143,6 +197,7 @@ const ProblemStatements = () => {
                 }`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
+                onClick={() => openModal(index)}
                 style={{
                   transform: isHovered ? 'translateY(-10px)' : 'translateY(0)',
                   transition: 'all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
@@ -189,9 +244,12 @@ const ProblemStatements = () => {
                     {problem.title}
                   </h3>
 
-                  {/* Problem Description */}
-                  <p className="text-slate-400 leading-relaxed mb-6 group-hover:text-slate-300 transition-colors duration-500">
-                    {problem.description}
+                  {/* Problem Description - Truncated */}
+                  <p className="text-slate-400 leading-relaxed mb-6 group-hover:text-slate-300 transition-colors duration-500 line-clamp-3">
+                    {problem.description.length > 120 
+                      ? `${problem.description.substring(0, 120)}...` 
+                      : problem.description
+                    }
                   </p>
 
                   {/* Interactive Footer */}
@@ -199,8 +257,14 @@ const ProblemStatements = () => {
                     <div className="flex items-center space-x-2">
                       <Star className={`w-4 h-4 ${domainColor} group-hover:animate-pulse`} />
                       <span className="text-xs text-slate-400 group-hover:text-slate-300 transition-colors duration-300">
-                        Challenge Available
+                        Click for full details
                       </span>
+                    </div>
+                    
+                    {/* Click indicator */}
+                    <div className="flex items-center space-x-2">
+                      <span className="text-xs text-slate-500 group-hover:text-slate-400">View More</span>
+                      <ArrowRight className={`w-4 h-4 ${domainColor} transform group-hover:translate-x-1 transition-transform duration-300`} />
                     </div>
                   </div>
 
@@ -212,74 +276,7 @@ const ProblemStatements = () => {
           })}
       </div>
 
-      {/* Enhanced Call to Action with Particle Effects */}
-      <div className="text-center">
-        <div className="relative cyber-card p-16 max-w-5xl mx-auto bg-slate-900/95 backdrop-blur-sm border-2 border-slate-800/50 overflow-hidden">
-          {/* Animated Particle Background */}
-          <div className="absolute inset-0 opacity-10">
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-ping"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 3}s`,
-                  animationDuration: `${2 + Math.random() * 2}s`
-                }}
-              />
-            ))}
-          </div>
-          
-          {/* Floating Icons */}
-          <div className="absolute top-8 left-8 opacity-20 animate-float" style={{ animationDelay: '0.5s' }}>
-            <Code className="w-12 h-12 text-purple-400" />
-          </div>
-          <div className="absolute top-8 right-8 opacity-20 animate-float" style={{ animationDelay: '1s' }}>
-            <Lightbulb className="w-12 h-12 text-yellow-400" />
-          </div>
-          <div className="absolute bottom-8 left-8 opacity-20 animate-float" style={{ animationDelay: '1.5s' }}>
-            <Target className="w-12 h-12 text-cyan-400" />
-          </div>
-          <div className="absolute bottom-8 right-8 opacity-20 animate-float" style={{ animationDelay: '2s' }}>
-            <Sparkles className="w-12 h-12 text-purple-400" />
-          </div>
-          
-          <div className="relative z-10">
-            <div className="mb-8">
-              <Zap className="w-20 h-20 text-yellow-400 mx-auto mb-6 icon-glow animate-fade" />
-              <h3 className="text-4xl font-bold text-white mb-4 heading-font">
-                Ready to <span className="gradient-text">Innovate</span>?
-              </h3>
-              <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Join the next generation of innovators. Choose your domain, assemble your team, and create solutions that will shape the future of technology.
-              </p>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-purple-500 px-10 py-4 rounded-xl font-semibold text-white shadow-lg shadow-cyan-500/25 hover:shadow-purple-500/25 transition-all duration-500 transform hover:scale-105">
-                <span className="relative z-10 flex items-center space-x-2">
-                  <span className="tracking-wider">START YOUR JOURNEY</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </button>
-              
-              <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-slate-400">
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <span>Registration Open</span>
-                </div>
-                <div className="hidden sm:block w-px h-4 bg-slate-600"></div>
-                <div className="flex items-center space-x-2">
-                  <Star className="w-4 h-4 text-yellow-400 animate-pulse" />
-                  <span>{problems.length} Challenges Available</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </>
   );
 
@@ -305,6 +302,112 @@ const ProblemStatements = () => {
         {/* Conditional Rendering based on configuration */}
         {problemStatementsConfig.showActualData ? <ActualContent /> : <ComingSoonContent />}
       </div>
+
+      {/* Modal */}
+      {selectedProblem !== null && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-fadeIn"
+            onClick={closeModal}
+          ></div>
+          
+          {/* Modal Content */}
+          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-slate-900/95 backdrop-blur-xl border-2 border-slate-700/50 rounded-2xl shadow-2xl animate-fadeIn">
+            {/* Close Button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 z-10 p-2 bg-slate-800/50 hover:bg-slate-700/50 rounded-full transition-all duration-300 group"
+            >
+              <X className="w-5 h-5 text-slate-400 group-hover:text-white" />
+            </button>
+
+            {(() => {
+              const problem = problems[selectedProblem];
+              const IconComponent = getDomainIcon(problem.domain);
+              const domainColor = getDomainColor(problem.domain);
+              const domainBgColor = getDomainBgColor(problem.domain);
+              const domainGradient = getDomainGradient(problem.domain);
+
+              return (
+                <div className="p-8 md:p-12">
+                  {/* Header */}
+                  <div className="text-center mb-8">
+                    <div className="flex items-center justify-center space-x-3 mb-4">
+                      <div className={`p-4 bg-gradient-to-br ${domainGradient.replace('/20', '/30')} rounded-2xl`}>
+                        <IconComponent className={`w-8 h-8 ${domainColor} icon-glow`} />
+                      </div>
+                      <div>
+                        <span className={`text-sm font-semibold ${domainColor} tracking-wider`}>
+                          {problem.domain}
+                        </span>
+                        <div className={`w-16 h-0.5 ${domainBgColor} mt-1`}></div>
+                      </div>
+                    </div>
+                    
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 heading-font">
+                      {problem.title}
+                    </h2>
+                    
+                    <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full"></div>
+                  </div>
+
+                  {/* Content Grid */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {/* Description Section */}
+                    <div className="space-y-6">
+                      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700/50">
+                        <h3 className="text-xl font-bold text-white mb-4 flex items-center space-x-2">
+                          <Sparkles className={`w-5 h-5 ${domainColor}`} />
+                          <span>Description</span>
+                        </h3>
+                        <div className="text-slate-300 leading-relaxed">
+                          {formatText(problem.description)}
+                        </div>
+                      </div>
+
+                      {/* Challenge Section */}
+                      <div className="bg-red-900/20 border border-red-700/50 rounded-xl p-6">
+                        <h3 className="text-xl font-bold text-white mb-4 flex items-center space-x-2">
+                          <Target className="w-5 h-5 text-red-400" />
+                          <span>Challenge</span>
+                        </h3>
+                        <div className="text-slate-300 leading-relaxed">
+                          {formatText(problem.challenge)}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Objective & Details */}
+                    <div className="space-y-6">
+                      {/* Objective Section */}
+                      <div className="bg-green-900/20 border border-green-700/50 rounded-xl p-6">
+                        <h3 className="text-xl font-bold text-white mb-4 flex items-center space-x-2">
+                          <Lightbulb className="w-5 h-5 text-green-400" />
+                          <span>Objective</span>
+                        </h3>
+                        <div className="text-slate-300 leading-relaxed">
+                          {formatText(problem.objective)}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex justify-center mt-8 pt-6 border-t border-slate-700/50">
+                    <button 
+                      onClick={closeModal}
+                      className="px-8 py-3 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-600/50 text-slate-300 hover:text-white rounded-xl font-semibold transition-all duration-300"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              );
+            })()}
+          </div>
+        </div>
+      )}
     </section>
   );
 };
