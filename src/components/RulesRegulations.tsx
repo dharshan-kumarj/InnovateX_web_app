@@ -1,19 +1,6 @@
-import { Shield, Users, Code, Trophy, GitBranch, Award, AlertTriangle, Settings, FileText, Download, Monitor } from 'lucide-react';
+import { Shield, Users, Code, Trophy, GitBranch, Award, AlertTriangle, Settings } from 'lucide-react';
 
 const RulesRegulations = () => {
-  // Function to handle PPT template download
-  const handleDownloadTemplate = () => {
-    // Create a download link for the PPT template
-    const link = document.createElement('a');
-    link.href = '/assets/templates/InnovateX_Template.pptx';
-    link.download = 'InnovateX_Presentation_Template.pptx';
-    link.target = '_blank';
-    
-    // Trigger the download
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
   const rulesData = [
     {
       id: 1,
@@ -228,103 +215,7 @@ const RulesRegulations = () => {
           </div>
         </div>
 
-        {/* PPT Template Section */}
-        <div className="mt-12 md:mt-16">
-          <div className="cyber-card p-6 md:p-8 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-indigo-900/20 border-2 border-blue-700/50">
-            <div className="text-center mb-8">
-              <div className="flex items-center justify-center space-x-4 mb-6">
-                <FileText className="w-10 h-10 text-blue-400 icon-glow" />
-                <h3 className="text-2xl md:text-3xl font-bold text-white heading-font">
-                  PPT Template Download
-                </h3>
-              </div>
-              <p className="text-slate-300 leading-relaxed max-w-3xl mx-auto mb-8">
-                Download the official InnovateX presentation template to ensure your team's final presentation 
-                meets all formatting requirements and maintains professional standards.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              {/* Template Requirements */}
-              <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700/50">
-                <div className="flex items-center space-x-3 mb-4">
-                  <Monitor className="w-6 h-6 text-purple-400" />
-                  <h4 className="text-xl font-bold text-white">Template Requirements</h4>
-                </div>
-                <ul className="space-y-3 text-slate-300">
-                  <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Mandatory use of official InnovateX template</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Maximum 10-12 slides including title and thank you</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Team name and member details required</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Professional formatting and clear readability</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Presentation Guidelines */}
-              <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700/50">
-                <div className="flex items-center space-x-3 mb-4">
-                  <Trophy className="w-6 h-6 text-yellow-400" />
-                  <h4 className="text-xl font-bold text-white">Presentation Guidelines</h4>
-                </div>
-                <ul className="space-y-3 text-slate-300">
-                  <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5-7 minutes presentation time limit</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Include problem statement and solution overview</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Demonstrate technical implementation</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Clear and confident delivery</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Download Button */}
-            <div className="text-center">
-              <button 
-                className="cyber-button inline-flex items-center space-x-3 px-8 py-4 text-white font-semibold text-lg hover-lift"
-                onClick={handleDownloadTemplate}
-              >
-                <Download className="w-6 h-6" />
-                <span>Download PPT Template</span>
-              </button>
-              <p className="text-slate-400 text-sm mt-4">
-                PowerPoint format (.pptx) • Compatible with PowerPoint 2016+ and Google Slides
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Footer CTA */}
-        <div className="text-center mt-8 md:mt-12">
-          <p className="text-slate-400 text-sm md:text-base">
-            Have questions about the rules or need help with the template? Contact the organizing team for clarification.
-          </p>
-          <div className="mt-4">
-            <button className="cyber-button px-6 py-3 text-white font-semibold">
-              Contact Organizers
-            </button>
-          </div>
-        </div>
         
       </div>
     </section>
