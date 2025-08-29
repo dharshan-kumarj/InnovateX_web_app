@@ -11,6 +11,7 @@ import nadhish from '../assets/images/event_coordintors/student/nadish.png';
 import regulla from '../assets/images/event_coordintors/student/Regulla .jpg';
 import sanjay from '../assets/images/club_coordinators/sanjay.jpg';
 import reshwin from '../assets/images/event_coordintors/student/Reshwin.jpg';
+import nesan from '../assets/images/event_coordintors/student/nesan.jpeg';
 
 const Members = () => {
   type Coordinator = {
@@ -74,6 +75,16 @@ const Members = () => {
     { name: 'Sanjay S', role: 'Co-ordinator - HackHive Club', image : sanjay , icon: Code },
     { name: 'Dharshan Kumar J', role: 'Co-ordinator - DotDev Club', image: dharshanImage, icon: Code },
     { name: 'Aravindan', role: 'Co-ordinator - Unbiased Club', image : aravindan , icon: Code }
+  ];
+
+  // Fourth Row - Publicity Designer (1 Card)
+  const publicityDesigner: Coordinator[] = [
+    {
+      name: 'Sanjay Nesan J',
+      role: 'Publicity Designer',
+      image: nesan,
+      icon: Users
+    }
   ];
 
   return (
@@ -178,6 +189,36 @@ const Members = () => {
                 <div className="w-8 sm:w-10 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto"></div>
               </div>
             ))}
+          </div>
+
+          {/* Publicity Designer Section - Fourth Row (1 Card) */}
+          <div className="flex justify-center px-4">
+            <div className="w-full max-w-xs">
+              {publicityDesigner.map((coordinator, index) => (
+                <div key={index} className="cyber-card p-4 md:p-6 text-center hover-lift member-card">
+                  <div className="relative mb-4 md:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24">
+                    <div className="w-full h-full rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 p-0.5">
+                      <div className="w-full h-full rounded-full overflow-hidden">
+                        {coordinator.image ? (
+                          <img
+                            src={coordinator.image}
+                            alt={coordinator.name}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-black flex items-center justify-center">
+                            <span className="text-xl sm:text-2xl font-bold text-white">{coordinator.name.charAt(0)}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-2 heading-font">{coordinator.name}</h3>
+                  <p className="text-sm sm:text-base text-purple-400 mb-3 md:mb-4">{coordinator.role}</p>
+                  <div className="w-8 sm:w-10 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto"></div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
