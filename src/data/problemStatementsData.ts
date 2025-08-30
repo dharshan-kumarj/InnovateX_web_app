@@ -33,6 +33,26 @@ export const problems: Problem[] = [
     title: ' AI Image-to-Story Generator (in Indian Languages)',
     description: 'Multilingual AI that transforms images into creative stories in Tamil, Telugu, Hindi, Malayalam, and Kannada.',
     domain: 'AI'
+  },  
+  {
+    title: 'AI-Agent Tutor for Teacher’s Semester Planning',
+    description: 'An AI agent that helps teachers design semester-long teaching plans, lesson aids, and assessments, adapting to syllabus requirements and offering advanced features through a subscription model.',
+    domain: 'AI'
+  },
+  {
+    title: 'AI-Agent for Automated Software Testing & Security Hardening',
+    description: 'An autonomous agent that tests, validates, and secures software codebases by running tests, detecting vulnerabilities, and suggesting secure fixes without human intervention.',
+    domain: 'AI'
+  },
+  {
+    title: 'Multi-Agent AI Ecosystem for Enterprise Decision-Making',
+    description: 'An AI system where agents focus on finance, compliance, risk, and market trends, collaborating to provide data-driven strategic recommendations and trade-off analysis for businesses.',
+    domain: 'AI'
+  },
+  {
+    title: ' AI-Agent for Automated Research Paper Writing',
+    description: 'An agent that generates research papers in standard formats (IEEE, Springer, etc.), ensuring correct citations, formatting, and plagiarism-free structured content based on input data.',
+    domain: 'AI'
   },
 
   // Cyber Security Problems - title, description, and challenge
@@ -55,16 +75,6 @@ export const problems: Problem[] = [
     domain: 'Cyber Security'
   },
   {
-    title: 'Multi-Agent AI Ecosystem for Enterprise Decision-Making',
-    description: 'An AI system where agents focus on finance, compliance, risk, and market trends, collaborating to provide data-driven strategic recommendations and trade-off analysis for businesses.',
-    domain: 'AI'
-  },
-  {
-    title: ' AI-Agent for Automated Research Paper Writing',
-    description: 'An agent that generates research papers in standard formats (IEEE, Springer, etc.), ensuring correct citations, formatting, and plagiarism-free structured content based on input data.',
-    domain: 'AI'
-  },
-  {
     title: 'Threat Sentinel',
     description: 'Many cyberattacks succeed because harmful software manages to run undetected on systems. A strong defense requires a tool that can spot such malicious programs in advance by analyzing both their known identifiers and suspicious behaviors..',
     challenge: 'Develop a monitoring solution that continuously observes the computer, detects potentially harmful files or unusual program actions, and prevents them from executing',
@@ -75,16 +85,6 @@ export const problems: Problem[] = [
     description: 'Unapproved USB devices are a frequent source of malware infections and data theft. Monitoring external storage activity is crucial to ensure system security and accountability.',
     challenge: 'Build a lightweight service that runs in the background to detect, identify, and record when USB storage devices are plugged into or removed from a system.',
     domain: 'Cyber Security'
-  },
-  {
-    title: 'AI-Agent Tutor for Teacher’s Semester Planning',
-    description: 'An AI agent that helps teachers design semester-long teaching plans, lesson aids, and assessments, adapting to syllabus requirements and offering advanced features through a subscription model.',
-    domain: 'AI'
-  },
-  {
-    title: 'AI-Agent for Automated Software Testing & Security Hardening',
-    description: 'An autonomous agent that tests, validates, and secures software codebases by running tests, detecting vulnerabilities, and suggesting secure fixes without human intervention.',
-    domain: 'AI'
   },
 ];
 
