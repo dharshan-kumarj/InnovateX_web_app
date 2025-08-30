@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Brain, Shield, Clock, Zap, ArrowRight, Target, Lightbulb, Sparkles, Star, Hexagon, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Brain, Shield, Clock, Zap, ArrowRight, Target, Lightbulb, Sparkles, Star, Hexagon, X, FileText } from 'lucide-react';
 import { problems, problemStatementsConfig } from '../data/problemStatementsData';
 
 const ProblemStatements = () => {
@@ -16,6 +16,20 @@ const ProblemStatements = () => {
     setSelectedProblem(null);
     document.body.style.overflow = 'auto'; // Restore scroll
   };
+
+  // Handle Escape key to close modal
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && selectedProblem !== null) {
+        closeModal();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [selectedProblem]);
 
   const getDomainIcon = (domain: string) => {
     return domain === 'AI' ? Brain : Shield;
@@ -362,7 +376,7 @@ const ProblemStatements = () => {
                           <span>Description</span>
                         </h3>
                         <div className="text-slate-300 leading-relaxed">
-                          {formatText(problem.description)}
+                          {formatText(problem.description ?? '')}
                         </div>
                       </div>
 
@@ -373,7 +387,7 @@ const ProblemStatements = () => {
                           <span>Challenge</span>
                         </h3>
                         <div className="text-slate-300 leading-relaxed">
-                          {formatText(problem.challenge)}
+                          {formatText(problem.challenge ?? '')}
                         </div>
                       </div>
                     </div>
@@ -387,7 +401,7 @@ const ProblemStatements = () => {
                           <span>Objective</span>
                         </h3>
                         <div className="text-slate-300 leading-relaxed">
-                          {formatText(problem.objective)}
+                          {formatText(problem.objective ?? '')}
                         </div>
                       </div>
                     </div>
@@ -405,6 +419,176 @@ const ProblemStatements = () => {
                 </div>
               );
             })()}
+          </div>
+        </div>
+      )}
+
+      {/* Modal Implementation */}
+      {selectedProblem !== null && problems[selectedProblem] && (
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-[9999] flex items-center justify-center p-2 sm:p-4">
+          <div className="bg-slate-900 rounded-xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto border border-slate-700 shadow-2xl">
+            {/* Header */}
+            <div className="p-4 sm:p-6 border-b border-slate-700">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  {(() => {
+                    const problem = problems[selectedProblem];
+                    const IconComponent = getDomainIcon(problem.domain);
+                    return (
+                      <div className={`p-2 bg-slate-800/50 rounded-lg`}>
+                        <IconComponent className={`w-5 h-5 ${getDomainColor(problem.domain)}`} />
+                      </div>
+                    );
+                  })()}
+                  <div>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-tight">
+                      {problems[selectedProblem].title}
+                    </h3>
+                    <p className={`text-sm ${getDomainColor(problems[selectedProblem].domain)} font-medium`}>
+                      {problems[selectedProblem].domain}
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onClick={closeModal}
+                  className="text-slate-400 hover:text-white transition-colors p-1"
+                >
+                  <X className="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-4 sm:p-6">
+              {(() => {
+                const problem = problems[selectedProblem];
+                
+                if (problem.domain === 'AI') {
+                  // AI Layout - Only Title and Description
+                  return (
+                    <div className="space-y-6">
+                      {/* Title Section */}
+                      <div className="bg-gradient-to-r from-purple-900/20 via-purple-800/10 to-transparent rounded-lg p-4 sm:p-6 border border-purple-700/30">
+                        <div className="flex items-center space-x-3 mb-4">
+                          <div className="p-2 bg-purple-500/20 rounded-lg">
+                            <Sparkles className="w-5 h-5 text-purple-400" />
+                          </div>
+                          <h4 className="text-lg sm:text-xl font-bold text-purple-400">Title</h4>
+                        </div>
+                        <h5 className="text-xl sm:text-2xl font-bold text-white mb-3 leading-tight">
+                          {problem.title}
+                        </h5>
+                      </div>
+
+                      {/* Description Section */}
+                      <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/30 rounded-lg p-4 sm:p-6 border border-slate-600/50">
+                        <div className="flex items-center space-x-3 mb-4">
+                          <div className="p-2 bg-blue-500/20 rounded-lg">
+                            <FileText className="w-5 h-5 text-blue-400" />
+                          </div>
+                          <h4 className="text-lg sm:text-xl font-bold text-blue-400">Description</h4>
+                        </div>
+                        <div className="text-slate-300 leading-relaxed text-sm sm:text-base">
+                          {problem.description ? (
+                            <p className="text-slate-300 leading-relaxed">
+                              {problem.description}
+                            </p>
+                          ) : (
+                            <p className="text-slate-400 italic">No description available</p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                } else {
+                  // Cyber Security Layout - Title, Description, and Challenge
+                  return (
+                    <div className="space-y-6">
+                      {/* Title Section */}
+                      <div className="bg-gradient-to-r from-cyan-900/20 via-cyan-800/10 to-transparent rounded-lg p-4 sm:p-6 border border-cyan-700/30">
+                        <div className="flex items-center space-x-3 mb-4">
+                          <div className="p-2 bg-cyan-500/20 rounded-lg">
+                            <Shield className="w-5 h-5 text-cyan-400" />
+                          </div>
+                          <h4 className="text-lg sm:text-xl font-bold text-cyan-400">Title</h4>
+                        </div>
+                        <h5 className="text-xl sm:text-2xl font-bold text-white mb-3 leading-tight">
+                          {problem.title}
+                        </h5>
+                      </div>
+
+                      {/* Description and Challenge Grid */}
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+                        {/* Description */}
+                        <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/30 rounded-lg p-4 sm:p-6 border border-slate-600/50">
+                          <div className="flex items-center space-x-3 mb-4">
+                            <div className="p-2 bg-blue-500/20 rounded-lg">
+                              <FileText className="w-5 h-5 text-blue-400" />
+                            </div>
+                            <h4 className="text-lg sm:text-xl font-bold text-blue-400">Description</h4>
+                          </div>
+                          <div className="text-slate-300 leading-relaxed text-sm sm:text-base">
+                            {problem.description ? (
+                              <p className="text-slate-300 leading-relaxed">
+                                {problem.description}
+                              </p>
+                            ) : (
+                              <p className="text-slate-400 italic">No description available</p>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Challenge */}
+                        <div className="bg-gradient-to-r from-red-900/20 to-red-800/10 rounded-lg p-4 sm:p-6 border border-red-700/30">
+                          <div className="flex items-center space-x-3 mb-4">
+                            <div className="p-2 bg-red-500/20 rounded-lg">
+                              <Target className="w-5 h-5 text-red-400" />
+                            </div>
+                            <h4 className="text-lg sm:text-xl font-bold text-red-400">Challenge</h4>
+                          </div>
+                          <div className="text-slate-300 leading-relaxed text-sm sm:text-base">
+                            {problem.challenge ? (
+                              <p className="text-slate-300 leading-relaxed">
+                                {problem.challenge}
+                              </p>
+                            ) : (
+                              <p className="text-slate-400 italic">No challenge specified</p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Objective - If present */}
+                      {problem.objective && (
+                        <div className="bg-gradient-to-r from-green-900/20 to-green-800/10 rounded-lg p-4 sm:p-6 border border-green-700/30">
+                          <div className="flex items-center space-x-3 mb-4">
+                            <div className="p-2 bg-green-500/20 rounded-lg">
+                              <Lightbulb className="w-5 h-5 text-green-400" />
+                            </div>
+                            <h4 className="text-lg sm:text-xl font-bold text-green-400">Objective</h4>
+                          </div>
+                          <div className="text-slate-300 leading-relaxed text-sm sm:text-base">
+                            <p className="text-slate-300 leading-relaxed">
+                              {problem.objective || 'No objective specified'}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+              })()}
+            </div>
+
+            {/* Footer */}
+            <div className="p-4 sm:p-6 border-t border-slate-700 text-center">
+              <button
+                onClick={closeModal}
+                className="cyber-button px-6 py-2 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-cyan-500 to-purple-500 w-full sm:w-auto"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       )}
