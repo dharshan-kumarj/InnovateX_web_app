@@ -73,7 +73,7 @@ const Roadmap = () => {
     {
       week: 4,
       title: 'Hackathon',
-      dates: ' 2-4 September, 2025',
+      dates: ' 2-3 September, 2025',
       icon: Trophy,
       color: 'text-yellow-400',
       bgColor: 'bg-yellow-400',
