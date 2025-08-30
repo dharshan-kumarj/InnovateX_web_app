@@ -5,10 +5,10 @@ import { problems, problemStatementsConfig } from '../data/problemStatementsData
 const ProblemStatements = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedDomain, setSelectedDomain] = useState<string | null>(null);
-  const [selectedProblem, setSelectedProblem] = useState<number | null>(null);
+  const [selectedProblem, setSelectedProblem] = useState<any | null>(null);
 
-  const openModal = (index: number) => {
-    setSelectedProblem(index);
+  const openModal = (problem: any) => {
+    setSelectedProblem(problem);
     document.body.style.overflow = 'hidden'; // Prevent background scroll
   };
 
@@ -211,7 +211,7 @@ const ProblemStatements = () => {
                 }`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                onClick={() => openModal(index)}
+                onClick={() => openModal(problem)}
                 style={{
                   transform: isHovered ? 'translateY(-10px)' : 'translateY(0)',
                   transition: 'all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
@@ -337,11 +337,10 @@ const ProblemStatements = () => {
             </button>
 
             {(() => {
-              const problem = problems[selectedProblem];
-              const IconComponent = getDomainIcon(problem.domain);
-              const domainColor = getDomainColor(problem.domain);
-              const domainBgColor = getDomainBgColor(problem.domain);
-              const domainGradient = getDomainGradient(problem.domain);
+              const IconComponent = getDomainIcon(selectedProblem.domain);
+              const domainColor = getDomainColor(selectedProblem.domain);
+              const domainBgColor = getDomainBgColor(selectedProblem.domain);
+              const domainGradient = getDomainGradient(selectedProblem.domain);
 
               return (
                 <div className="p-8 md:p-12">
@@ -353,14 +352,14 @@ const ProblemStatements = () => {
                       </div>
                       <div>
                         <span className={`text-sm font-semibold ${domainColor} tracking-wider`}>
-                          {problem.domain}
+                          {selectedProblem.domain}
                         </span>
                         <div className={`w-16 h-0.5 ${domainBgColor} mt-1`}></div>
                       </div>
                     </div>
                     
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 heading-font">
-                      {problem.title}
+                      {selectedProblem.title}
                     </h2>
                     
                     <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full"></div>
@@ -376,7 +375,7 @@ const ProblemStatements = () => {
                           <span>Description</span>
                         </h3>
                         <div className="text-slate-300 leading-relaxed">
-                          {formatText(problem.description ?? '')}
+                          {formatText(selectedProblem.description ?? '')}
                         </div>
                       </div>
 
@@ -387,7 +386,7 @@ const ProblemStatements = () => {
                           <span>Challenge</span>
                         </h3>
                         <div className="text-slate-300 leading-relaxed">
-                          {formatText(problem.challenge ?? '')}
+                          {formatText(selectedProblem.challenge ?? '')}
                         </div>
                       </div>
                     </div>
@@ -401,7 +400,7 @@ const ProblemStatements = () => {
                           <span>Objective</span>
                         </h3>
                         <div className="text-slate-300 leading-relaxed">
-                          {formatText(problem.objective ?? '')}
+                          {formatText(selectedProblem.objective ?? '')}
                         </div>
                       </div>
                     </div>
@@ -424,7 +423,7 @@ const ProblemStatements = () => {
       )}
 
       {/* Modal Implementation */}
-      {selectedProblem !== null && problems[selectedProblem] && (
+      {selectedProblem && (
         <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-[9999] flex items-center justify-center p-2 sm:p-4">
           <div className="bg-slate-900 rounded-xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto border border-slate-700 shadow-2xl">
             {/* Header */}
@@ -432,20 +431,19 @@ const ProblemStatements = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   {(() => {
-                    const problem = problems[selectedProblem];
-                    const IconComponent = getDomainIcon(problem.domain);
+                    const IconComponent = getDomainIcon(selectedProblem.domain);
                     return (
                       <div className={`p-2 bg-slate-800/50 rounded-lg`}>
-                        <IconComponent className={`w-5 h-5 ${getDomainColor(problem.domain)}`} />
+                        <IconComponent className={`w-5 h-5 ${getDomainColor(selectedProblem.domain)}`} />
                       </div>
                     );
                   })()}
                   <div>
                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-tight">
-                      {problems[selectedProblem].title}
+                      {selectedProblem.title}
                     </h3>
-                    <p className={`text-sm ${getDomainColor(problems[selectedProblem].domain)} font-medium`}>
-                      {problems[selectedProblem].domain}
+                    <p className={`text-sm ${getDomainColor(selectedProblem.domain)} font-medium`}>
+                      {selectedProblem.domain}
                     </p>
                   </div>
                 </div>
@@ -461,9 +459,7 @@ const ProblemStatements = () => {
             {/* Content */}
             <div className="p-4 sm:p-6">
               {(() => {
-                const problem = problems[selectedProblem];
-                
-                if (problem.domain === 'AI') {
+                if (selectedProblem.domain === 'AI') {
                   // AI Layout - Only Title and Description
                   return (
                     <div className="space-y-6">
@@ -476,7 +472,7 @@ const ProblemStatements = () => {
                           <h4 className="text-lg sm:text-xl font-bold text-purple-400">Title</h4>
                         </div>
                         <h5 className="text-xl sm:text-2xl font-bold text-white mb-3 leading-tight">
-                          {problem.title}
+                          {selectedProblem.title}
                         </h5>
                       </div>
 
@@ -489,9 +485,9 @@ const ProblemStatements = () => {
                           <h4 className="text-lg sm:text-xl font-bold text-blue-400">Description</h4>
                         </div>
                         <div className="text-slate-300 leading-relaxed text-sm sm:text-base">
-                          {problem.description ? (
+                          {selectedProblem.description ? (
                             <p className="text-slate-300 leading-relaxed">
-                              {problem.description}
+                              {selectedProblem.description}
                             </p>
                           ) : (
                             <p className="text-slate-400 italic">No description available</p>
@@ -513,7 +509,7 @@ const ProblemStatements = () => {
                           <h4 className="text-lg sm:text-xl font-bold text-cyan-400">Title</h4>
                         </div>
                         <h5 className="text-xl sm:text-2xl font-bold text-white mb-3 leading-tight">
-                          {problem.title}
+                          {selectedProblem.title}
                         </h5>
                       </div>
 
@@ -528,9 +524,9 @@ const ProblemStatements = () => {
                             <h4 className="text-lg sm:text-xl font-bold text-blue-400">Description</h4>
                           </div>
                           <div className="text-slate-300 leading-relaxed text-sm sm:text-base">
-                            {problem.description ? (
+                            {selectedProblem.description ? (
                               <p className="text-slate-300 leading-relaxed">
-                                {problem.description}
+                                {selectedProblem.description}
                               </p>
                             ) : (
                               <p className="text-slate-400 italic">No description available</p>
@@ -547,9 +543,9 @@ const ProblemStatements = () => {
                             <h4 className="text-lg sm:text-xl font-bold text-red-400">Challenge</h4>
                           </div>
                           <div className="text-slate-300 leading-relaxed text-sm sm:text-base">
-                            {problem.challenge ? (
+                            {selectedProblem.challenge ? (
                               <p className="text-slate-300 leading-relaxed">
-                                {problem.challenge}
+                                {selectedProblem.challenge}
                               </p>
                             ) : (
                               <p className="text-slate-400 italic">No challenge specified</p>
@@ -559,7 +555,7 @@ const ProblemStatements = () => {
                       </div>
 
                       {/* Objective - If present */}
-                      {problem.objective && (
+                      {selectedProblem.objective && (
                         <div className="bg-gradient-to-r from-green-900/20 to-green-800/10 rounded-lg p-4 sm:p-6 border border-green-700/30">
                           <div className="flex items-center space-x-3 mb-4">
                             <div className="p-2 bg-green-500/20 rounded-lg">
@@ -569,7 +565,7 @@ const ProblemStatements = () => {
                           </div>
                           <div className="text-slate-300 leading-relaxed text-sm sm:text-base">
                             <p className="text-slate-300 leading-relaxed">
-                              {problem.objective || 'No objective specified'}
+                              {selectedProblem.objective || 'No objective specified'}
                             </p>
                           </div>
                         </div>
