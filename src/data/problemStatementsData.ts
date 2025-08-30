@@ -65,13 +65,13 @@ export const problems: Problem[] = [
   {
     title: 'SecureScore Auditor',
     description: 'Systems with weak or misconfigured settings are prime targets for cyberattacks. A simple auditing tool can help identify vulnerabilities and give users guidance on improving their machine’s security posture.',
-    challenge: 'Systems with weak or misconfigured settings are prime targets for cyberattacks. A simple auditing tool can help identify vulnerabilities and give users guidance on improving their machine’s security posture.',
+    challenge: 'Create a script that scans the system for common weaknesses, evaluates its security readiness, and produces an easy-to-read summary report.',
     domain: 'Cyber Security'
   },
   {
     title: 'Data Carver',
     description: 'When files are deleted, the raw data often remains hidden on the disk until overwritten by new data. With the right method, these fragments can be found and reassembled into usable files.',
-    challenge: 'When files are deleted, the raw data often remains hidden on the disk until overwritten by new data. With the right method, these fragments can be found and reassembled into usable files.',
+    challenge: 'Build a file recovery utility that scans a disk image, locates file signatures, and reconstructs lost files for the user.',
     domain: 'Cyber Security'
   },
   {
